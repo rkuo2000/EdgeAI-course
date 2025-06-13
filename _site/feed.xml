@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-TW"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="zh-TW" /><updated>2025-06-13T12:34:31+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">LI KAI 部落格</title><subtitle>這是一個使用 Jekyll 和 Hydure 主題建立的個人部落格， 用來分享我的學習筆記、生活觀察與技術心得。</subtitle><author><name>Li Kai_Huang</name><email>moray.huang@gmail.com</email></author><entry><title type="html">我的第一篇部落格文章：撰寫指南與 Markdown 簡介</title><link href="http://localhost:4000/%E6%8C%87%E5%8D%97/markdown/2025/06/13/my-first-blog-post-and-markdown-guide.html" rel="alternate" type="text/html" title="我的第一篇部落格文章：撰寫指南與 Markdown 簡介" /><published>2025-06-13T11:30:00+08:00</published><updated>2025-06-13T11:30:00+08:00</updated><id>http://localhost:4000/%E6%8C%87%E5%8D%97/markdown/2025/06/13/my-first-blog-post-and-markdown-guide</id><content type="html" xml:base="http://localhost:4000/%E6%8C%87%E5%8D%97/markdown/2025/06/13/my-first-blog-post-and-markdown-guide.html"><![CDATA[<h1 id="歡迎來到我的部落格">歡迎來到我的部落格！</h1>
+
+<p>這是我使用 Jekyll 和 Hydure 主題搭建的第一篇測試文章。我會在這裡分享一些關於如何撰寫部落格文章的簡單指南，並介紹基本的 Markdown 語法。</p>
+
+<hr />
+
+<h2 id="如何撰寫新的部落格文章">如何撰寫新的部落格文章？</h2>
+
+<p>要寫一篇新的文章非常簡單，請遵循以下步驟：</p>
+
+<ol>
+  <li>
+    <p><strong>創建檔案</strong>：
+在您的部落格專案資料夾中，找到 <code class="language-plaintext highlighter-rouge">_posts</code> 資料夾。
+在這個資料夾裡，創建一個新的 Markdown 檔案（副檔名為 <code class="language-plaintext highlighter-rouge">.md</code> 或 <code class="language-plaintext highlighter-rouge">.markdown</code>）。</p>
+  </li>
+  <li><strong>命名規則</strong>：
+檔案名稱必須遵循特定的格式：<code class="language-plaintext highlighter-rouge">YYYY-MM-DD-您的文章標題.md</code>。
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">YYYY-MM-DD</code>：文章發布的日期，例如 <code class="language-plaintext highlighter-rouge">2025-06-13</code>。</li>
+      <li><code class="language-plaintext highlighter-rouge">您的文章標題</code>：用連字號 <code class="language-plaintext highlighter-rouge">-</code> 連接的英文標題，例如 <code class="language-plaintext highlighter-rouge">my-first-blog-post</code>。
+所以，完整檔案名看起來會像這樣：<code class="language-plaintext highlighter-rouge">2025-06-13-my-first-blog-post.md</code>。</li>
+    </ul>
+  </li>
+  <li><strong>添加 YAML Front Matter</strong>：
+每篇文章的最上方，必須有一個由三個連字號 <code class="language-plaintext highlighter-rouge">---</code> 包裹的區塊，稱為 YAML Front Matter。這個區塊用來定義文章的元數據（metadata）。
+例如：
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">文章的標題</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">YYYY-MM-DD HH:MM:SS +時區偏移</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">分類一</span><span class="pi">,</span> <span class="nv">分類二</span><span class="pi">]</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">標籤一</span><span class="pi">,</span> <span class="nv">標籤二</span><span class="pi">]</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">文章的簡短描述，用於預覽或 SEO。</span>
+<span class="na">mathjax</span><span class="pi">:</span> <span class="kc">false</span> <span class="c1"># 如果需要公式顯示，改為 true</span>
+<span class="na">comments</span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># 如果需要評論，改為 true</span>
+<span class="nn">---</span>
+</code></pre></div>    </div>
+    <p>請確保 <code class="language-plaintext highlighter-rouge">layout: post</code> 是正確的，這會告訴 Jekyll 使用 <code class="language-plaintext highlighter-rouge">post</code> 佈局來渲染您的文章。</p>
+  </li>
+  <li><strong>開始撰寫內容</strong>：
+在 YAML Front Matter 之後，您就可以使用 Markdown 語法自由地撰寫您的文章內容了。</li>
+</ol>
+
+<hr />
+
+<h2 id="markdown-基本語法快速說明">Markdown 基本語法快速說明</h2>
+
+<p>Markdown 是一種輕量級標記語言，讓您可以輕鬆地撰寫格式化的文本。</p>
+
+<h3 id="標題-headings">標題 (Headings)</h3>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">#</code> 符號來創建不同級別的標題。<code class="language-plaintext highlighter-rouge">#</code> 的數量代表標題的級別。</p>
+
+<p>```markdown</p>
+<h1 id="這是一級標題">這是一級標題</h1>
+<h2 id="這是二級標題">這是二級標題</h2>
+<h3 id="這是三級標題">這是三級標題</h3>
+<h4 id="這是四級標題">這是四級標題</h4>]]></content><author><name>Li Kai_Huang</name><email>moray.huang@gmail.com</email></author><category term="指南" /><category term="Markdown" /><category term="入門" /><category term="測試" /><category term="教學" /><category term="部落格" /><summary type="html"><![CDATA[這篇文章是我的第一篇部落格文章，旨在說明如何撰寫新文章以及 Markdown 的基本語法。]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2025/06/13/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2025-06-13T09:29:58+08:00</published><updated>2025-06-13T09:29:58+08:00</updated><id>http://localhost:4000/jekyll/update/2025/06/13/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2025/06/13/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>Jekyll requires blog post files to be named according to the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>Li Kai_Huang</name><email>moray.huang@gmail.com</email></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry></feed>
