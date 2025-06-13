@@ -1,0 +1,12 @@
+- title: Email
+  url: mailto:moray.huang@gmail.com
+  icon: fas fa-envelope
+- title: FaceBook
+  url: https://www.facebook.com/moray.huang
+  icon: fab fa-facebook
+- title: Instagram
+  url: https://www.instagram.com/likai._.huang
+  icon: fab fa-Instagram
+- title: GitHub
+  url: https://github.com/Li-Kai-Huang
+  icon: fab fa-github
