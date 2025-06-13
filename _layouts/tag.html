@@ -4,14 +4,14 @@ layout: default # 或者 default-page, 取決於您的主題結構
 
 <div class="tag-page-container">
   <header class="tag-header">
-    <h1 class="tag-title">標籤：{{ page.tag | capitalize }}</h1> {# 顯示當前標籤的名稱 #}
+    <h1 class="tag-title">標籤：{{ page.tag | capitalize }}</h1>
     <p class="tag-description">
       以下是所有與 "<b>{{ page.tag }}</b>" 相關的文章。
     </p>
   </header>
 
   <div class="post-list">
-    {% assign posts = site.tags[page.tag] %} {# 獲取所有屬於當前標籤的文章 #}
+    {% assign posts = site.tags[page.tag] %}
     {% for post in posts %}
       <article class="post-item">
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
@@ -22,7 +22,7 @@ layout: default # 或者 default-page, 取決於您的主題結構
           {% endif %}
         </div>
         <div class="post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 50 }} {# 顯示文章摘要 #}
+          {{ post.excerpt | strip_html | truncatewords: 50 }}
           <a href="{{ post.url | relative_url }}" class="read-more">閱讀更多 &raquo;</a>
         </div>
       </article>
