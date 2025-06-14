@@ -56,7 +56,7 @@ jekyll-archives:
     - categories
   layout: "archive" # Jekyll-archives 會使用這個佈局來渲染標籤/分類頁面。
                     # 您需要確保 _layouts/archive.html (或您自訂的佈局) 存在。
-  permalink: "/:collection/:name/" # 預設的永久連結格式
+  #permalink: "/:collection/:name/" # 預設的永久連結格式
                                    # 這會生成類似 /tags/入門/ 和 /categories/指南/ 的網址
 # 排除處理的項目
 # 這些檔案或資料夾在建構時會被忽略

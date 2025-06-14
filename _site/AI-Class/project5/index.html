@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="LI KAI 部落格" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AI 情緒感知音樂播放器 | LI KAI 部落格</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="AI 情緒感知音樂播放器" />
+<meta name="author" content="Li Kai_Huang" />
+<meta property="og:locale" content="zh_TW" />
+<meta name="description" content="這篇文章會講解我邊緣運算的第五個專案 AI 情緒感知音樂播放器" />
+<meta property="og:description" content="這篇文章會講解我邊緣運算的第五個專案 AI 情緒感知音樂播放器" />
+<link rel="canonical" href="http://localhost:4000/blog/AI-Class/project5/" />
+<meta property="og:url" content="http://localhost:4000/blog/AI-Class/project5/" />
+<meta property="og:site_name" content="LI KAI 部落格" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-07T15:40:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AI 情緒感知音樂播放器" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Li Kai_Huang"},"dateModified":"2025-06-07T15:40:00+08:00","datePublished":"2025-06-07T15:40:00+08:00","description":"這篇文章會講解我邊緣運算的第五個專案 AI 情緒感知音樂播放器","headline":"AI 情緒感知音樂播放器","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/AI-Class/project5/"},"url":"http://localhost:4000/blog/AI-Class/project5/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="/blog/assets/css/open-color.css">
+  <link rel="stylesheet" href="/blog/assets/css/hydure.css">
+
+  <script async src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+
+  
+
+</head>
+
+
+  <body>
+    <div id="layout" class="pure-g">
+      
+      
+      <div class="sidebar pure-u-1 pure-u-md-1-4" style="background-image: url(https://cdn.jsdelivr.net/gh/zivong/jekyll-theme-hydure@v2.0.0/cover.jpg);">
+        <div class="sidebar-shield">
+          <header class="header">
+  <a class="brand-title" href="/blog/">LI KAI 部落格</a>
+  <p class="brand-tagline">寫下我的生活與技術分享</p>
+
+  
+    <nav class="nav pure-menu">
+      <ul class="pure-menu-list">
+      
+        <li class="nav-item pure-menu-item">
+          <a href="/blog/" class="pure-menu-link ">
+            Home
+          </a>
+        </li>
+      
+        <li class="nav-item pure-menu-item">
+          <a href="/blog/about/" class="pure-menu-link ">
+            About
+          </a>
+        </li>
+      
+        <li class="nav-item pure-menu-item">
+          <a href="/blog/tags/" class="pure-menu-link ">
+            Tags
+          </a>
+        </li>
+      
+        <li class="nav-item pure-menu-item">
+          <a href="/blog/categories/" class="pure-menu-link ">
+            Categories
+          </a>
+        </li>
+      
+        <li class="nav-item pure-menu-item">
+          <a href="https://github.com/Li-Kai-Huang" class="pure-menu-link ">
+            GitHub
+          </a>
+        </li>
+      
+      </ul>
+    </nav>
+  
+
+  
+    <div class="social pure-menu pure-menu-horizontal">
+      <ul class="social-list pure-menu-list">
+        
+          <li class="social-item pure-menu-item">
+            <a class="pure-menu-link pure-button" href="mailto:moray.huang@gmail.com" target="_blank">
+              <i class="fas fa-envelope" title="Email"></i>
+            </a>
+          </li>
+        
+          <li class="social-item pure-menu-item">
+            <a class="pure-menu-link pure-button" href="https://www.facebook.com/moray.huang" target="_blank">
+              <i class="fab fa-facebook" title="FaceBook"></i>
+            </a>
+          </li>
+        
+          <li class="social-item pure-menu-item">
+            <a class="pure-menu-link pure-button" href="https://www.instagram.com/likai._.huang" target="_blank">
+              <i class="fab fa-Instagram" title="Instagram"></i>
+            </a>
+          </li>
+        
+          <li class="social-item pure-menu-item">
+            <a class="pure-menu-link pure-button" href="https://github.com/Li-Kai-Huang" target="_blank">
+              <i class="fab fa-github" title="GitHub"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  
+</header>
+
+        </div>
+      </div>
+      <div class="content pure-u-1 pure-u-md-3-4">
+        <div class="main">
+          <article class="post">
+  
+    <div class="post-meta">
+      <ul class="post-categories"><li>
+            <span class="post-category">1131邊緣運算課</span></li></ul>
+    </div>
+  
+  <h1 class="post-title">AI 情緒感知音樂播放器</h1>
+  <div class="post-meta">
+    <time datetime="2025-06-07T15:40:00+08:00" itemprop="datePublished">
+      07 Jun 2025
+    </time></div>
+  
+  <h1 id="ai-情緒感知音樂播放器">AI 情緒感知音樂播放器</h1>
+
+<p>本報告旨在介紹一款創新的AI 情緒感知音樂播放器。該系統旨在透過人工智慧分析用戶當前的情緒狀態，並據此智能推薦並播放儲存在本地 SD 卡中的相應音樂，為使用者提供個性化的音樂聆聽體驗。其核心機制是捕捉用戶影像並傳送至 Google Gemini 進行情緒偵測，隨後 AI 會根據偵測到的情緒，從預設的歌曲清單中推薦最符合當前情感的歌曲名稱。</p>
+
+<ul>
+  <li><a href="#ai-情緒感知音樂播放器">AI 情緒感知音樂播放器</a>
+    <ul>
+      <li><a href="#功能">功能</a></li>
+      <li><a href="#genai程式碼設計流程">GenAI程式碼設計流程</a></li>
+      <li><a href="#程式碼產生提示">程式碼產生提示</a></li>
+      <li><a href="#程式碼">程式碼</a>
+        <ul>
+          <li><a href="#重點">重點</a></li>
+        </ul>
+      </li>
+      <li><a href="#實作成果">實作成果</a>
+        <ul>
+          <li><a href="#照片">照片</a></li>
+          <li><a href="#影片">影片</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="功能">功能</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 抓取影像傳送給Gemini偵測情緒然後要求推薦儲存在SD卡中的歌曲名稱（提示字輸入幾個已經   存在SD卡的歌曲檔名，讓AI去推薦）
+
+2. 播放MP3文件
+</code></pre></div></div>
+
+<h2 id="genai程式碼設計流程">GenAI程式碼設計流程</h2>
+
+<pre><code class="language-mermaid">graph TD
+    A[開始] --&gt; B(系統啟動);
+    B --&gt; C[捕捉影像];
+    C --&gt; D[影像數據];
+    D --&gt; E[發送影像與歌曲列表至 Google Gemini];
+    E --&gt; F{Gemini 偵測情緒並推薦歌曲名稱};
+    F -- 返回推薦歌曲名稱 --&gt; G[接收推薦歌曲名稱];
+    G --&gt; H[從 SD 卡讀取推薦的 MP3 檔案];
+    H --&gt; I[MP3 音訊數據];
+    I --&gt; J[播放 MP3 音樂];
+    J --&gt; K[結束];
+</code></pre>
+
+<p><strong>流程圖說明：</strong></p>
+
+<ul>
+  <li><strong>開始 (Start)：</strong> 系統啟動流程。</li>
+  <li><strong>系統啟動 (System Startup)：</strong> 初始化所有硬體和軟體模組。</li>
+  <li><strong>捕捉影像 (Capture Image)：</strong> 攝影機模組捕捉當前用戶的影像。</li>
+  <li><strong>影像數據 (Image Data)：</strong> 獲取的圖像數據。</li>
+  <li><strong>發送影像與歌曲列表至 Google Gemini (Send Image &amp; Song List to Google Gemini)：</strong> MCU 將圖像數據連同預存的歌曲名稱列表一同發送給 Google Gemini API。</li>
+  <li><strong>Gemini 偵測情緒並推薦歌曲名稱 (Gemini Detects Emotion &amp; Recommends Song Name)：</strong> Google Gemini 分析圖像中的情緒，並根據提示字中的歌曲列表推薦一首匹配的歌曲名稱。</li>
+  <li><strong>接收推薦歌曲名稱 (Receive Recommended Song Name)：</strong> MCU 接收 Gemini 返回的推薦歌曲名稱。</li>
+  <li><strong>從 SD 卡讀取推薦的 MP3 檔案 (Read Recommended MP3 File from SD Card)：</strong> MCU 根據推薦的歌曲名稱，從本地 SD 卡中找到並讀取對應的 MP3 檔案。</li>
+  <li><strong>MP3 音訊數據 (MP3 Audio Data)：</strong> 從 SD 卡讀取到的 MP3 音訊數據。</li>
+  <li><strong>播放 MP3 音樂 (Play MP3 Music)：</strong> MCU 透過音訊輸出模組播放 MP3 音樂。</li>
+  <li><strong>結束 (End)：</strong> 一次情緒感知音樂播放流程完成。</li>
+</ul>
+
+<h2 id="程式碼產生提示">程式碼產生提示</h2>
+<p><img src="photo/AI情緒感知音樂播放器/螢幕擷取畫面%202025-06-14%20012049.png" alt="img" /></p>
+
+<h2 id="程式碼">程式碼</h2>
+
+<h3 id="重點">重點</h3>
+<p>&lt;<strong>提示字:</strong> <em><code class="language-plaintext highlighter-rouge">"Analyze the emotion (happy, angry, sad, or joyful) of the person in the image. Based on the detected emotion, recommend a suitable song filename from the following list. Respond in the exact format: 'Emotion: [emotion], Song: [filename.mp3]'. Emotion mapping: Happy: APT.mp3. Angry: BirdsOfAFeather.mp3. Sad: ThePowerOfGoodBye.mp3. Joyful: AstroBunny.mp3. Other songs available: gTTS.mp3, IBelieve.mp3, JarOfLove.mp3, LoversMisses.mp3, Stumblin_In.mp3, YUNGBLUD.mp3."</code></em>&gt;</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 設定您的 WiFi 網路資訊</span>
+<span class="kt">char</span> <span class="n">wifi_ssid</span><span class="p">[]</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span> <span class="c1">// 您的 WiFi 名稱 (SSID)</span>
+<span class="kt">char</span> <span class="n">wifi_pass</span><span class="p">[]</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span> <span class="c1">// 您的 WiFi 密碼</span>
+<span class="c1">// 設定您的 Gemini API Key</span>
+<span class="n">String</span> <span class="n">Gemini_key</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span> <span class="c1">// 請在此處替換為您的 Gemini API Key</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;WiFi.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;WiFiUdp.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">"GenAI.h"</span><span class="cp">
+#include</span> <span class="cpf">"VideoStream.h"</span><span class="cp">
+#include</span> <span class="cpf">"SPI.h"</span><span class="cp">
+#include</span> <span class="cpf">"AmebaILI9341.h"</span><span class="cp">
+#include</span> <span class="cpf">"TJpg_Decoder.h"</span><span class="c1"> // Include the jpeg decoder library</span><span class="cp">
+#include</span> <span class="cpf">"AmebaFatFS.h"</span><span class="cp">
+</span>
+<span class="n">WiFiSSLClient</span> <span class="n">client</span><span class="p">;</span>
+<span class="n">GenAI</span> <span class="n">llm</span><span class="p">;</span> <span class="c1">// 用於 Gemini Vision API</span>
+<span class="n">GenAI</span> <span class="n">tts</span><span class="p">;</span> <span class="c1">// 用於 Google Text-to-Speech API</span>
+
+<span class="n">AmebaFatFS</span> <span class="n">fs</span><span class="p">;</span> <span class="c1">// 用於 SD 卡操作</span>
+
+<span class="n">VideoSetting</span> <span class="nf">config</span><span class="p">(</span><span class="mi">768</span><span class="p">,</span> <span class="mi">768</span><span class="p">,</span> <span class="n">CAM_FPS</span><span class="p">,</span> <span class="n">VIDEO_JPEG</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 預設 768x768 解析度</span>
+<span class="cp">#define CHANNEL 0
+</span>
+<span class="kt">uint32_t</span> <span class="n">img_addr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">uint32_t</span> <span class="n">img_len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">buttonPin</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 觸發拍照的按鈕引腳 (通常是 D1)</span>
+<span class="c1">// #define LED_B PC_5 // 板載藍色 LED 引腳 (此行已移除，因為 LED_B 已在核心庫中定義)</span>
+
+<span class="c1">// 提示詞 (Prompt): 要求 AI 回覆情緒和歌曲名，並指定明確格式</span>
+<span class="n">String</span> <span class="n">prompt_msg</span> <span class="o">=</span> <span class="s">"Analyze the emotion (happy, angry, sad, or joyful) of the person in the image. Based on the detected emotion, recommend a suitable song filename from the following list. Respond in the exact format: 'Emotion: [emotion], Song: [filename.mp3]'. Emotion mapping: Happy: APT.mp3. Angry: BirdsOfAFeather.mp3. Sad: ThePowerOfGoodBye.mp3. Joyful: AstroBunny.mp3. Other songs available: gTTS.mp3, IBelieve.mp3, JarOfLove.mp3, LoversMisses.mp3, Stumblin_In.mp3, YUNGBLUD.mp3."</span><span class="p">;</span>
+
+<span class="c1">// 定義歌曲列表，用於驗證和提取 Gemini 的回覆</span>
+<span class="k">const</span> <span class="n">String</span> <span class="n">songList</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"APT.mp3"</span><span class="p">,</span> <span class="s">"AstroBunny.mp3"</span><span class="p">,</span> <span class="s">"BirdsOfAFeather.mp3"</span><span class="p">,</span> <span class="s">"gTTS.mp3"</span><span class="p">,</span>
+    <span class="s">"IBelieve.mp3"</span><span class="p">,</span> <span class="s">"JarOfLove.mp3"</span><span class="p">,</span> <span class="s">"LoversMisses.mp3"</span><span class="p">,</span> <span class="s">"Stumblin_In.mp3"</span><span class="p">,</span>
+    <span class="s">"ThePowerOfGoodBye.mp3"</span><span class="p">,</span> <span class="s">"YUNGBLUD.mp3"</span> <span class="c1">// 已修正拼寫錯誤</span>
+<span class="p">};</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">numSongs</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">songList</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">songList</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+
+
+<span class="c1">// TFT 顯示器引腳定義</span>
+<span class="cp">#define TFT_RESET 5
+#define TFT_DC 4
+#define TFT_CS SPI_SS // CS 引腳通常連接到 SPI_SS
+</span>
+<span class="n">AmebaILI9341</span> <span class="n">tft</span> <span class="o">=</span> <span class="n">AmebaILI9341</span><span class="p">(</span><span class="n">TFT_CS</span><span class="p">,</span> <span class="n">TFT_DC</span><span class="p">,</span> <span class="n">TFT_RESET</span><span class="p">);</span>
+<span class="cp">#define ILI9341_SPI_FREQUENCY 20000000 // TFT SPI 通訊頻率
+</span>
+<span class="c1">// JPEG 圖片解碼回調函數 (用於 TFT 顯示)</span>
+<span class="c1">// 修正 'h' 參數類型為 uint16_t 以匹配 SketchCallback 類型</span>
+<span class="n">bool</span> <span class="nf">tft_output</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">w</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">h</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">drawBitmap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">bitmap</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Return 1 to decode next block</span>
+<span class="p">}</span>
+
+<span class="c1">// 初始化 WiFi 連線</span>
+<span class="kt">void</span> <span class="nf">initWiFi</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Connecting to WiFi..."</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 嘗試連線兩次</span>
+        <span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">wifi_ssid</span><span class="p">,</span> <span class="n">wifi_pass</span><span class="p">);</span>
+        <span class="kt">uint32_t</span> <span class="n">StartTime</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"."</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">((</span><span class="n">StartTime</span> <span class="o">+</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">millis</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// 等待 10 秒超時</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">WiFi connected."</span><span class="p">);</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"STA IP address: "</span><span class="p">);</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">localIP</span><span class="p">());</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">WiFi connection failed, retrying..."</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Failed to connect to WiFi after multiple attempts."</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"WiFi Fail!"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 初始化 TFT 顯示器</span>
+<span class="kt">void</span> <span class="nf">init_tft</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setRotation</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// 旋轉方向，根據您的顯示器調整</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span> <span class="c1">// 清除螢幕</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 設定游標位置</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setForeground</span><span class="p">(</span><span class="n">ILI9341_GREEN</span><span class="p">);</span> <span class="c1">// 設定文字顏色</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setFontSize</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// 設定字體大小</span>
+<span class="p">}</span>
+
+<span class="c1">// SD 卡 MP3 播放函數</span>
+<span class="kt">void</span> <span class="nf">sdPlayMP3</span><span class="p">(</span><span class="n">String</span> <span class="n">filename</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Attempting to open and play: "</span><span class="p">);</span> 
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+
+    <span class="c1">// 構建完整的檔案路徑 (例如: "0:/mp3/APT.mp3" 或 "0:/tts_song_name.mp3")</span>
+    <span class="n">String</span> <span class="n">filepath</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="n">fs</span><span class="p">.</span><span class="n">getRootPath</span><span class="p">())</span> <span class="o">+</span> <span class="n">filename</span><span class="p">;</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Full path: "</span><span class="p">);</span> <span class="c1">// 顯示完整的檔案路徑</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">filepath</span><span class="p">);</span>
+
+    <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="n">fs</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">MP3</span><span class="p">);</span> <span class="c1">// 打開 MP3 檔案，這裡修正為帶 MP3 模式</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"[ERROR] Failed to open MP3: "</span><span class="p">);</span> <span class="c1">// 錯誤訊息</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">filepath</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Error: Song not found!"</span><span class="p">);</span> 
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Successfully opened MP3 file."</span><span class="p">);</span> <span class="c1">// 成功打開檔案</span>
+    <span class="n">file</span><span class="p">.</span><span class="n">setMp3DigitalVol</span><span class="p">(</span><span class="mi">175</span><span class="p">);</span> <span class="c1">// 設定播放音量 (0-255)</span>
+    <span class="n">file</span><span class="p">.</span><span class="n">playMp3</span><span class="p">();</span> <span class="c1">// 播放 MP3</span>
+
+    <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">playStartTime</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+    <span class="c1">// 簡單地等待 10 秒讓歌曲播放，實際應用中可根據 MP3 庫的 API 檢查播放狀態</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">millis</span><span class="p">()</span> <span class="o">-</span> <span class="n">playStartTime</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Playback finished."</span><span class="p">);</span> <span class="c1">// 播放結束日誌</span>
+    <span class="n">file</span><span class="p">.</span><span class="n">close</span><span class="p">();</span> <span class="c1">// 關閉檔案</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span> <span class="c1">// 初始化序列埠通訊</span>
+
+    <span class="n">SPI</span><span class="p">.</span><span class="n">setDefaultFrequency</span><span class="p">(</span><span class="n">ILI9341_SPI_FREQUENCY</span><span class="p">);</span> <span class="c1">// 設定 SPI 頻率</span>
+    <span class="n">initWiFi</span><span class="p">();</span> <span class="c1">// 連接 WiFi</span>
+
+    <span class="c1">// 相機初始化設定 (這些函數可能會在相機未連接或故障時導致程式卡住)</span>
+    <span class="n">config</span><span class="p">.</span><span class="n">setRotation</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">Camera</span><span class="p">.</span><span class="n">configVideoChannel</span><span class="p">(</span><span class="n">CHANNEL</span><span class="p">,</span> <span class="n">config</span><span class="p">);</span>
+    <span class="n">Camera</span><span class="p">.</span><span class="n">videoInit</span><span class="p">();</span>
+    <span class="n">Camera</span><span class="p">.</span><span class="n">channelBegin</span><span class="p">(</span><span class="n">CHANNEL</span><span class="p">);</span>
+    <span class="n">Camera</span><span class="p">.</span><span class="n">printInfo</span><span class="p">();</span> <span class="c1">// 印出相機資訊，有助於調試</span>
+    
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span> <span class="c1">// 設定按鈕引腳為輸入模式 (依您的要求)</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">LED_B</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span> <span class="c1">// 設定板載 LED 引腳為輸出模式</span>
+
+    <span class="n">init_tft</span><span class="p">();</span> <span class="c1">// 初始化 TFT 顯示器</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Music Player"</span><span class="p">);</span> <span class="c1">// TFT 顯示標題</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span> <span class="c1">// 移到下一行</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Press button to scan"</span><span class="p">);</span> <span class="c1">// 初始提示，只顯示一次</span>
+
+    <span class="n">TJpgDec</span><span class="p">.</span><span class="n">setJpgScale</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// JPEG 解碼比例</span>
+    <span class="n">TJpgDec</span><span class="p">.</span><span class="n">setCallback</span><span class="p">(</span><span class="n">tft_output</span><span class="p">);</span> <span class="c1">// 設定 JPEG 解碼回調函數</span>
+
+    <span class="n">fs</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="c1">// 初始化 SD 卡檔案系統 (僅在 setup() 中調用一次)</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"SD Card initialized."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 檢測按鈕是否被按下 (高電位觸發，依您的要求)</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">))</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span> <span class="c1">// 清除螢幕</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Capturing..."</span><span class="p">);</span> <span class="c1">// TFT 顯示正在捕捉</span>
+        
+        <span class="c1">// LED 閃爍提示正在捕捉</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_B</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+            <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+            <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_B</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+            <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 捕捉影像</span>
+        <span class="n">Camera</span><span class="p">.</span><span class="n">getImage</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_addr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_len</span><span class="p">);</span>    
+
+        <span class="c1">// 解碼並顯示影像到 TFT</span>
+        <span class="n">TJpgDec</span><span class="p">.</span><span class="n">getJpgSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">img_addr</span><span class="p">,</span> <span class="n">img_len</span><span class="p">);</span>
+        <span class="n">TJpgDec</span><span class="p">.</span><span class="n">drawJpg</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">img_addr</span><span class="p">,</span> <span class="n">img_len</span><span class="p">);</span>
+
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">320</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 將游標移到圖片下方</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Analyzing..."</span><span class="p">);</span> <span class="c1">// TFT 顯示正在分析</span>
+
+        <span class="c1">// 調用 Gemini Vision API 進行情緒分析和歌曲推薦</span>
+        <span class="n">String</span> <span class="n">gemini_response</span> <span class="o">=</span> <span class="n">llm</span><span class="p">.</span><span class="n">geminivision</span><span class="p">(</span><span class="n">Gemini_key</span><span class="p">,</span> <span class="s">"gemini-2.0-flash"</span><span class="p">,</span> <span class="n">prompt_msg</span><span class="p">,</span> <span class="n">img_addr</span><span class="p">,</span> <span class="n">img_len</span><span class="p">,</span> <span class="n">client</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Gemini Response (Raw): "</span><span class="p">);</span> <span class="c1">// 序列埠顯示 Gemini 原始回覆</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">gemini_response</span><span class="p">);</span>
+
+        <span class="c1">// --- 解析邏輯：從 Gemini 回覆中提取情緒和歌曲檔案名 ---</span>
+        <span class="n">String</span> <span class="n">detectedEmotion</span> <span class="o">=</span> <span class="s">"Unknown"</span><span class="p">;</span> <span class="c1">// 預設情緒</span>
+        <span class="n">String</span> <span class="n">recommendedSongFilename</span> <span class="o">=</span> <span class="s">"JarOfLove.mp3"</span><span class="p">;</span> <span class="c1">// 預設歌曲</span>
+
+        <span class="n">String</span> <span class="n">rawGeminiResponse</span> <span class="o">=</span> <span class="n">gemini_response</span><span class="p">;</span>
+        <span class="n">rawGeminiResponse</span><span class="p">.</span><span class="n">trim</span><span class="p">();</span> <span class="c1">// 移除前後空白</span>
+
+        <span class="c1">// 尋找情緒關鍵字</span>
+        <span class="kt">int</span> <span class="n">emotionStart</span> <span class="o">=</span> <span class="n">rawGeminiResponse</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"Emotion: "</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">songStart</span> <span class="o">=</span> <span class="n">rawGeminiResponse</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"Song: "</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">emotionStart</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">songStart</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 提取情緒詞</span>
+            <span class="kt">int</span> <span class="n">emotionValueStart</span> <span class="o">=</span> <span class="n">emotionStart</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="s">"Emotion: "</span><span class="p">).</span><span class="n">length</span><span class="p">();</span>
+            <span class="kt">int</span> <span class="n">emotionValueEnd</span> <span class="o">=</span> <span class="n">rawGeminiResponse</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">","</span><span class="p">,</span> <span class="n">emotionValueStart</span><span class="p">);</span> <span class="c1">// 尋找逗號作為分隔符</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">emotionValueEnd</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">emotionValueEnd</span> <span class="o">&gt;</span> <span class="n">emotionValueStart</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">detectedEmotion</span> <span class="o">=</span> <span class="n">rawGeminiResponse</span><span class="p">.</span><span class="n">substring</span><span class="p">(</span><span class="n">emotionValueStart</span><span class="p">,</span> <span class="n">emotionValueEnd</span><span class="p">);</span>
+                <span class="n">detectedEmotion</span><span class="p">.</span><span class="n">trim</span><span class="p">();</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 提取歌曲檔案名</span>
+            <span class="kt">int</span> <span class="n">songValueStart</span> <span class="o">=</span> <span class="n">songStart</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="s">"Song: "</span><span class="p">).</span><span class="n">length</span><span class="p">();</span>
+            <span class="n">String</span> <span class="n">extractedSong</span> <span class="o">=</span> <span class="n">rawGeminiResponse</span><span class="p">.</span><span class="n">substring</span><span class="p">(</span><span class="n">songValueStart</span><span class="p">);</span>
+            <span class="n">extractedSong</span><span class="p">.</span><span class="n">trim</span><span class="p">();</span>
+
+            <span class="c1">// 驗證提取出的歌曲名是否在我們的列表中</span>
+            <span class="n">bool</span> <span class="n">songFoundInList</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numSongs</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">String</span> <span class="n">lowerCaseExtractedSong</span> <span class="o">=</span> <span class="n">extractedSong</span><span class="p">;</span>
+                <span class="n">lowerCaseExtractedSong</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">();</span>
+                <span class="n">String</span> <span class="n">lowerCaseSongName</span> <span class="o">=</span> <span class="n">songList</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                <span class="n">lowerCaseSongName</span><span class="p">.</span><span class="n">toLowerCase</span><span class="p">();</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">lowerCaseExtractedSong</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">lowerCaseSongName</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">recommendedSongFilename</span> <span class="o">=</span> <span class="n">songList</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="c1">// 使用列表中的正確大小寫名稱</span>
+                    <span class="n">songFoundInList</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">songFoundInList</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"[WARNING] Extracted song not in list. Using default: JarOfLove.mp3"</span><span class="p">);</span>
+                <span class="n">recommendedSongFilename</span> <span class="o">=</span> <span class="s">"JarOfLove.mp3"</span><span class="p">;</span> <span class="c1">// 如果提取的歌曲不在列表中，則使用預設</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"[WARNING] Gemini response format not as expected. Using default song and emotion."</span><span class="p">);</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"AI Response Error!"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="c1">// --- 解析邏輯結束 ---</span>
+
+        <span class="c1">// TFT 顯示情緒</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span> <span class="c1">// 清除螢幕</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Emotion:"</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">detectedEmotion</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">""</span><span class="p">);</span> <span class="c1">// 空行</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Playing:"</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">recommendedSongFilename</span><span class="p">);</span>
+        
+        <span class="c1">// 播放推薦的歌曲</span>
+        <span class="n">sdPlayMP3</span><span class="p">(</span><span class="s">"mp3/"</span> <span class="o">+</span> <span class="n">recommendedSongFilename</span><span class="p">);</span>
+
+        <span class="c1">// 按鈕防抖和冷卻</span>
+        <span class="c1">// 這裡的 while 迴圈會等待按鈕釋放，然後再延遲</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">)</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">){</span> 
+            <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> 
+
+        <span class="c1">// 在下一次循環開始前，顯示「Press button to scan」</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Music Player"</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Press button to scan"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="實作成果">實作成果</h2>
+
+<h3 id="照片">照片</h3>
+
+<p><strong>示範照</strong></p>
+
+<p><img src="/assets/photo/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178626_0.jpg" alt="imag" />
+<img src="/assets/photo/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178625_0.jpg" alt="imag" /></p>
+
+<h3 id="影片">影片</h3>
+
+<ol>
+  <li>Damo影片
+Damo1<br />
+<a href="https://www.youtube.com/watch?v=nc7NwauzBc0"><img src="https://img.youtube.com/vi/nc7NwauzBc0/0.jpg" alt="IMAGE ALT TEXT HERE" /></a><br />
+點擊圖片播放
+Damo2<br />
+<a href="https://www.youtube.com/watch?v=JS7wE3yyeiU"><img src="https://img.youtube.com/vi/JS7wE3yyeiU/0.jpg" alt="IMAGE ALT TEXT HERE" /></a><br />
+點擊圖片播放</li>
+</ol>
+
+
+  
+    <div class="post-meta">
+      <i class="post-tags-icon fas fa-tag"></i>
+      <ul class="post-tags"><li>
+            <span class="post-tag">入門</span></li><li>
+            <span class="post-tag">學習</span></li><li>
+            <span class="post-tag">blog</span></li></ul>
+    </div>
+  
+
+  
+</article>
+
+        </div>
+        <footer class="footer pure-g">
+  <div class="pure-u-1 pure-u-md-1-2">
+    <small>
+      &copy;&nbsp;<time datetime="2025-06-14T23:16:14+08:00">2025</time>&nbsp;<a href="" target="_blank">Li Kai_Huang</a>. All right reserved.
+    </small>
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-2">
+    <small>
+      Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> & <a href="https://github.com/zivong/jekyll-theme-hydure" target="_blank">Hydure</a>
+    </small>
+  </div>
+</footer>
+
+      </div>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="LI KAI 部落格" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AI 盲人視覺輔助系統 | LI KAI 部落格</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="AI 盲人視覺輔助系統" />
+<meta name="author" content="Li Kai_Huang" />
+<meta property="og:locale" content="zh_TW" />
+<meta name="description" content="這篇文章會講解我邊緣運算的第七個專案 AI 盲人視覺輔助系統" />
+<meta property="og:description" content="這篇文章會講解我邊緣運算的第七個專案 AI 盲人視覺輔助系統" />
+<link rel="canonical" href="http://localhost:4000/blog/AI-Class/project7/" />
+<meta property="og:url" content="http://localhost:4000/blog/AI-Class/project7/" />
+<meta property="og:site_name" content="LI KAI 部落格" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-07T15:40:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AI 盲人視覺輔助系統" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Li Kai_Huang"},"dateModified":"2025-06-07T15:40:00+08:00","datePublished":"2025-06-07T15:40:00+08:00","description":"這篇文章會講解我邊緣運算的第七個專案 AI 盲人視覺輔助系統","headline":"AI 盲人視覺輔助系統","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/AI-Class/project7/"},"url":"http://localhost:4000/blog/AI-Class/project7/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="/blog/assets/css/open-color.css">
+  <link rel="stylesheet" href="/blog/assets/css/hydure.css">
+
+  <script async src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+
+  
+
+</head>
+
+
+  <body>
+    <div id="layout" class="pure-g">
+      
+      
+      <div class="sidebar pure-u-1 pure-u-md-1-4" style="background-image: url(https://cdn.jsdelivr.net/gh/zivong/jekyll-theme-hydure@v2.0.0/cover.jpg);">
+        <div class="sidebar-shield">
+          <header class="header">
+  <a class="brand-title" href="/blog/">LI KAI 部落格</a>
+  <p class="brand-tagline">寫下我的生活與技術分享</p>
+
+  
+    <nav class="nav pure-menu">
+      <ul class="pure-menu-list">
+      
+        <li class="nav-item pure-menu-item">
+          <a href="/blog/" class="pure-menu-link ">
+            Home
+          </a>
+        </li>
+      
+        <li class="nav-item pure-menu-item">
+          <a href="/blog/about/" class="pure-menu-link ">
+            About
+          </a>
+        </li>
+      
+        <li class="nav-item pure-menu-item">
+          <a href="/blog/tags/" class="pure-menu-link ">
+            Tags
+          </a>
+        </li>
+      
+        <li class="nav-item pure-menu-item">
+          <a href="/blog/categories/" class="pure-menu-link ">
+            Categories
+          </a>
+        </li>
+      
+        <li class="nav-item pure-menu-item">
+          <a href="https://github.com/Li-Kai-Huang" class="pure-menu-link ">
+            GitHub
+          </a>
+        </li>
+      
+      </ul>
+    </nav>
+  
+
+  
+    <div class="social pure-menu pure-menu-horizontal">
+      <ul class="social-list pure-menu-list">
+        
+          <li class="social-item pure-menu-item">
+            <a class="pure-menu-link pure-button" href="mailto:moray.huang@gmail.com" target="_blank">
+              <i class="fas fa-envelope" title="Email"></i>
+            </a>
+          </li>
+        
+          <li class="social-item pure-menu-item">
+            <a class="pure-menu-link pure-button" href="https://www.facebook.com/moray.huang" target="_blank">
+              <i class="fab fa-facebook" title="FaceBook"></i>
+            </a>
+          </li>
+        
+          <li class="social-item pure-menu-item">
+            <a class="pure-menu-link pure-button" href="https://www.instagram.com/likai._.huang" target="_blank">
+              <i class="fab fa-Instagram" title="Instagram"></i>
+            </a>
+          </li>
+        
+          <li class="social-item pure-menu-item">
+            <a class="pure-menu-link pure-button" href="https://github.com/Li-Kai-Huang" target="_blank">
+              <i class="fab fa-github" title="GitHub"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  
+</header>
+
+        </div>
+      </div>
+      <div class="content pure-u-1 pure-u-md-3-4">
+        <div class="main">
+          <article class="post">
+  
+    <div class="post-meta">
+      <ul class="post-categories"><li>
+            <span class="post-category">1131邊緣運算課</span></li></ul>
+    </div>
+  
+  <h1 class="post-title">AI 盲人視覺輔助系統</h1>
+  <div class="post-meta">
+    <time datetime="2025-06-07T15:40:00+08:00" itemprop="datePublished">
+      07 Jun 2025
+    </time></div>
+  
+  <h1 id="ai-盲人視覺輔助系統">AI 盲人視覺輔助系統</h1>
+
+<p>本報告旨在介紹一款創新且多功能的AI 盲人視覺輔助系統。該系統旨在透過整合多種感官輸入與先進人工智慧，為視障人士提供即時、全面的環境感知與語音導引。其核心功能包括：透過觸摸感應觸發系統；隨後，系統會拍攝當前影像並傳送至 Google Gemini Vision 詢問現場狀況；同時，它會將實時時鐘 (RTC) 時間資訊發送給 Gemini，以獲得時間相關的回應；更進一步地，系統支援麥克風錄製用戶語音並傳送給 Gemini 進行理解，AI 將返回相關文本回應，最終所有來自 Gemini 的文本都將透過文字轉語音 (TTS) 播放出來</p>
+
+<ul>
+  <li><a href="#ai-盲人視覺輔助系統">AI 盲人視覺輔助系統</a>
+    <ul>
+      <li><a href="#功能">功能</a></li>
+      <li><a href="#genai程式碼設計流程">GenAI程式碼設計流程</a>
+        <ul>
+          <li><a href="#2-詳細軟體設計流程圖-detailed-software-design-flowchart---markdown-程式碼-最終且絕對修正版">2. 詳細軟體設計流程圖 (Detailed Software Design Flowchart) - Markdown 程式碼 (最終且絕對修正版)</a></li>
+        </ul>
+      </li>
+      <li><a href="#程式碼產生提示">程式碼產生提示</a></li>
+      <li><a href="#程式碼">程式碼</a></li>
+      <li><a href="#實作成果">實作成果</a>
+        <ul>
+          <li><a href="#照片">照片</a></li>
+          <li><a href="#影片">影片</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="功能">功能</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 觸摸（ADC）
+
+2. 拍攝影像並傳送給 Gemini 並詢問現場狀況
+
+3. 發送 RTC時間訊息給 Gemini 並返回文本
+
+4. 麥克風錄製音訊並發送給 Gemini 返回文本，然後進行文本轉語音
+</code></pre></div></div>
+
+<h2 id="genai程式碼設計流程">GenAI程式碼設計流程</h2>
+
+<pre><code class="language-mermaid">graph TD
+    A[開始] --&gt; B(系統啟動/待機);
+    B --&gt; C(用戶觸摸感應器 - ADC);
+    C --&gt; D[觸摸信號];
+    D --&gt; E[同步執行];
+    E --&gt; E1[拍攝影像];
+    E --&gt; E2[讀取 RTC 時間];
+    E --&gt; E3[麥克風錄製音訊];
+    
+    E1 --&gt; F{影像數據};
+    E2 --&gt; G{時間數據};
+    E3 --&gt; H{音訊數據};
+    
+    F &amp; G &amp; H --&gt; I[打包多模態數據];
+    I --&gt; J[發送打包數據至 Google Gemini - 多模態輸入];
+    J --&gt; K{Gemini 分析並返回多段文本回應};
+    
+    K -- 成功返回 --&gt; L[接收 Gemini 回應文本];
+    L --&gt; M[將所有文本發送至 Google TTS];
+    M --&gt; N{TTS 生成整合 MP3 語音};
+    N -- 成功 --&gt; O[接收整合 MP3 語音檔];
+    N -- 失敗 --&gt; P[TTS 錯誤處理/提示音];
+    P --&gt; B;
+
+    O --&gt; Q[播放整合 MP3 語音];
+    Q --&gt; R[語音播報完成];
+    R --&gt; B;
+
+    K -- 失敗/超時 --&gt; S[Gemini 錯誤處理/提示音];
+    S --&gt; B;
+</code></pre>
+<p><strong>說明：</strong></p>
+
+<ul>
+  <li>我在 <code class="language-plaintext highlighter-rouge">B(用戶觸摸感應器 ADC);</code> 節點中將 <code class="language-plaintext highlighter-rouge">ADC</code> 改為 <code class="language-plaintext highlighter-rouge">- ADC</code>。</li>
+  <li>我在 <code class="language-plaintext highlighter-rouge">I --&gt; J[發送打包數據至 Google Gemini (多模態輸入)];</code> 節點中將 <code class="language-plaintext highlighter-rouge">(多模態輸入)</code> 改為 <code class="language-plaintext highlighter-rouge">- 多模態輸入</code>。</li>
+  <li>我在 <code class="language-plaintext highlighter-rouge">K{Gemini 分析並返回多段文本回應};</code> 節點中，這個節點本身沒有括號，保持不變。</li>
+  <li>我在 <code class="language-plaintext highlighter-rouge">N{TTS 生成整合 MP3 語音};</code> 節點中，這個節點本身沒有括號，保持不變。</li>
+</ul>
+
+<hr />
+
+<h3 id="2-詳細軟體設計流程圖-detailed-software-design-flowchart---markdown-程式碼-最終且絕對修正版">2. 詳細軟體設計流程圖 (Detailed Software Design Flowchart) - Markdown 程式碼 (最終且絕對修正版)</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">mermaid
+</span><span class="sb">graph TD
+    A[系統初始化] --&gt; B[設定 Wi-Fi 連線];
+    B --&gt; C[初始化攝影機模組];
+    C --&gt; D[初始化 RTC 模組];
+    D --&gt; E[初始化麥克風輸入模組];
+    E --&gt; F[初始化音訊輸出模組];
+    F --&gt; G{等待觸摸 ADC 訊號};
+
+    G -- 觸摸訊號觸發 --&gt; H[開始多模態數據採集];
+    H --&gt; I[捕捉當前影像幀];
+    H --&gt; J[讀取當前 RTC 時間];
+    H --&gt; K[錄製音訊 N 秒 - 麥克風];
+    
+    I --&gt; L[影像數據預處理/壓縮為 JPG];
+    J --&gt; M[格式化時間數據為文本];
+    K --&gt; N[音訊數據預處理/編碼為適當格式];
+    
+    L &amp; M &amp; N --&gt; O[組裝多模態 JSON/HTTP 請求 Payload];
+    O --&gt; P[發送 Payload 至 Google Gemini API];
+    P --&gt; Q{等待 Gemini API 回應};
+
+    Q -- 成功接收 --&gt; R[解析 Gemini JSON 回應];
+    R --&gt; S[提取所有文本回應 例如 場景描述、時間訊息、語音回覆];
+    S --&gt; T[將提取的所有文本拼接為單一字符串 或 分段處理];
+    T --&gt; U[準備 HTTP/HTTPS 請求到 Google TTS];
+    U --&gt; V[發送拼接文本至 Google TTS API];
+    V --&gt; W{等待 TTS API 回應};
+
+    W -- 成功接收 --&gt; X[接收並緩衝整合 MP3 語音數據流];
+    X --&gt; Y[MP3 解碼與音訊播放];
+    Y --&gt; Z[等待語音播放完成];
+    Z --&gt; G;
+
+    Q -- 失敗/超時 --&gt; AA[處理 Gemini 錯誤/重試/日誌];
+    AA --&gt; G;
+
+    W -- 失敗/超時 --&gt; BB[處理 TTS 錯誤/重試/日誌];
+    BB --&gt; G;
+</span></code></pre></div></div>
+
+<p><strong>流程圖說明：</strong></p>
+
+<ul>
+  <li><strong>開始 (Start)：</strong> 系統啟動流程。</li>
+  <li><strong>系統啟動/待機 (System Startup/Standby)：</strong> 系統初始化並等待用戶觸發。</li>
+  <li><strong>用戶觸摸感應器 (ADC) (User Touches Sensor (ADC))：</strong> 用戶透過觸摸感應器（ADC 輸入）觸發系統。</li>
+  <li><strong>觸摸信號 (Touch Signal)：</strong> 觸摸感應器發出的信號。</li>
+  <li><strong>同步執行 (Execute Simultaneously)：</strong> 表示以下三個動作幾乎同時進行。
+    <ul>
+      <li><strong>拍攝影像 (Capture Image)：</strong> 攝影機捕捉當前環境影像。</li>
+      <li><strong>讀取 RTC 時間 (Read RTC Time)：</strong> 讀取實時時鐘的當前時間。</li>
+      <li><strong>麥克風錄製音訊 (Microphone Record Audio)：</strong> 麥克風錄製用戶的語音輸入（如果用戶有提問）。</li>
+    </ul>
+  </li>
+  <li><strong>影像數據 (Image Data)：</strong> 捕捉到的圖像數據。</li>
+  <li><strong>時間數據 (Time Data)：</strong> 從 RTC 獲取的時間信息。</li>
+  <li><strong>音訊數據 (Audio Data)：</strong> 麥克風錄製的音訊數據。</li>
+  <li><strong>打包多模態數據 (Package Multi-modal Data)：</strong> 將影像、時間和音訊數據整合為一個請求包。</li>
+  <li><strong>發送打包數據至 Google Gemini (多模態輸入) (Send Packaged Data to Google Gemini (Multi-modal Input))：</strong> 將整合後的數據發送給 Google Gemini API。</li>
+  <li><strong>Gemini 分析並返回多段文本回應 (Gemini Analyzes &amp; Returns Multiple Text Responses)：</strong> Gemini 處理多模態輸入，並返回現場狀況描述、時間相關信息和語音交互的回應等文本。</li>
+  <li><strong>成功返回 (Successful Return)：</strong> 如果 Gemini 成功返回回應。</li>
+  <li><strong>接收 Gemini 回應文本 (Receive Gemini Response Text)：</strong> 接收來自 Gemini 的所有文本內容。</li>
+  <li><strong>將所有文本發送至 Google TTS (Send All Text to Google TTS)：</strong> 將從 Gemini 獲得的所有文本發送給 Google TTS API。</li>
+  <li><strong>TTS 生成整合 MP3 語音 (TTS Generates Integrated MP3 Audio)：</strong> Google TTS 將多段文本整合成一個或多個 MP3 語音檔案。</li>
+  <li><strong>成功 (Success)：</strong> 如果 TTS 成功生成語音。</li>
+  <li><strong>接收整合 MP3 語音檔 (Receive Integrated MP3 Audio File)：</strong> 接收從 TTS 返回的 MP3 語音數據。</li>
+  <li><strong>失敗 (Failure)：</strong> 如果 TTS 服務失敗或超時。</li>
+  <li><strong>TTS 錯誤處理/提示音 (TTS Error Handling/Prompt Tone)：</strong> 執行錯誤處理或播放提示音。</li>
+  <li><strong>播放整合 MP3 語音 (Play Integrated MP3 Audio)：</strong> 透過音訊輸出裝置播放整合後的語音。</li>
+  <li><strong>語音播報完成 (Voice Broadcast Complete)：</strong> 語音播放結束。</li>
+  <li><strong>Gemini 錯誤處理/提示音 (Gemini Error Handling/Prompt Tone)：</strong> 如果 Gemini API 呼叫失敗，執行錯誤處理或播放提示音。</li>
+  <li><strong>返回到系統啟動/待機 (Return to System Startup/Standby)：</strong> 系統回到初始狀態，等待下一次觸發。</li>
+</ul>
+
+<h2 id="程式碼產生提示">程式碼產生提示</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>首先我有一個按鈕是用來啟動的
+
+接著我有一個鏡頭用來看環境
+
+TFT LCD 用來輸出回傳的文字跟鏡頭畫面
+
+最後我有一個喇叭要將文字轉成語音播報
+
+請用我給的範例 組合出符合功能的程式碼 ## 程式碼  
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;WiFi.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;WiFiUdp.h&gt;</span><span class="c1">          // Often included with WiFi.h for network functions</span><span class="cp">
+#include</span> <span class="cpf">"GenAI.h"</span><span class="c1">            // For LLM (Vision, Text) and TTS</span><span class="cp">
+#include</span> <span class="cpf">"VideoStream.h"</span><span class="c1">      // For Camera operations</span><span class="cp">
+#include</span> <span class="cpf">"SPI.h"</span><span class="c1">              // For SPI communication with LCD</span><span class="cp">
+#include</span> <span class="cpf">"AmebaILI9341.h"</span><span class="c1">     // For ILI9341 TFT LCD driver</span><span class="cp">
+#include</span> <span class="cpf">"TJpg_Decoder.h"</span><span class="c1">     // For JPEG decoder to display camera output on LCD</span><span class="cp">
+#include</span> <span class="cpf">&lt;AmebaFatFS.h&gt;</span><span class="c1">       // For SD card operations (saving MP3 for TTS)</span><span class="cp">
+#include</span> <span class="cpf">"rtc.h"</span><span class="c1">              // For Real-Time Clock</span><span class="cp">
+#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="c1">             // For time structures (struct tm)</span><span class="cp">
+#include</span> <span class="cpf">"StreamIO.h"</span><span class="c1">         // For audio streaming - RE-ADDED</span><span class="cp">
+#include</span> <span class="cpf">"AudioStream.h"</span><span class="c1">      // For audio input (microphone) - RE-ADDED</span><span class="cp">
+#include</span> <span class="cpf">"AudioEncoder.h"</span><span class="c1">     // For audio encoding - RE-ADDED</span><span class="cp">
+#include</span> <span class="cpf">"MP4Recording.h"</span><span class="c1">     // For recording audio to MP4 - RE-ADDED</span><span class="cp">
+#include</span> <span class="cpf">"Base64.h"</span><span class="c1">           // For Base64 encoding - RE-ADDED</span><span class="cp">
+#include</span> <span class="cpf">&lt;ArduinoJson.h&gt;</span><span class="c1">      // For JSON parsing - RE-ADDED</span><span class="cp">
+</span>
+<span class="c1">// 請替換為你的網路 SSID 和密碼</span>
+<span class="kt">char</span> <span class="n">wifi_ssid</span><span class="p">[]</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">wifi_pass</span><span class="p">[]</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+
+<span class="c1">// --- API 金鑰 ---</span>
+<span class="n">String</span> <span class="n">Gemini_key</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span> <span class="c1">// &lt;&lt;&lt; 重要：請替換為你的實際金鑰</span>
+<span class="n">String</span> <span class="n">openAI_key</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span> <span class="c1">// Not strictly needed for this example, but keep it as a placeholder. (此範例非必需，但作為佔位符保留。)</span>
+<span class="n">String</span> <span class="n">Llama_key</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>  <span class="c1">// Not strictly needed for this example, but keep it as placeholder. (此範例非必需，但作為佔位符保留。)</span>
+
+<span class="c1">// SD Card MP3 Filename for TTS output (用於 TTS 輸出的 SD 卡 MP3 檔案名稱)</span>
+<span class="n">String</span> <span class="n">mp3Filename</span> <span class="o">=</span> <span class="s">"broadcast_output.mp3"</span><span class="p">;</span>
+
+<span class="c1">// Audio Recording Configuration for Speech-to-Text (用於語音轉文字的音訊錄製配置)</span>
+<span class="n">String</span> <span class="n">audioRecordFilename</span> <span class="o">=</span> <span class="s">"user_input"</span><span class="p">;</span> <span class="c1">// Filename for recorded audio</span>
+<span class="kt">int</span> <span class="n">recordSeconds</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>                     <span class="c1">// Duration for audio recording (e.g., 5 seconds for user query)</span>
+
+<span class="c1">// Camera Configuration (相機配置)</span>
+<span class="c1">// Adjusted resolution for troubleshooting Bus Fault / VOE initialization issues.</span>
+<span class="c1">// Start with a lower resolution to reduce memory pressure and complexity.</span>
+<span class="n">VideoSetting</span> <span class="nf">config</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="n">CAM_FPS</span><span class="p">,</span> <span class="n">VIDEO_JPEG</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// FIXED: Reduced camera resolution for troubleshooting</span>
+<span class="cp">#define CHANNEL 0 // Camera channel
+</span>
+<span class="kt">uint32_t</span> <span class="n">img_addr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Memory address of the captured image</span>
+<span class="kt">uint32_t</span> <span class="n">img_len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// Length of the captured image data</span>
+
+<span class="c1">// Prompt message for the LLM Vision model (用於 LLM 影像模型提示訊息)</span>
+<span class="c1">// This will be dynamically updated with time and user's voice query.</span>
+<span class="n">String</span> <span class="n">prompt_msg_base</span> <span class="o">=</span> <span class="s">"請問圖片中的內容是什麼?請用繁體中文，簡潔地回答。"</span><span class="p">;</span>
+
+<span class="c1">// Pin Definitions (引腳定義)</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">buttonPin</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// The pin connected to the pushbutton (連接到按鈕的引腳)</span>
+<span class="c1">// LED_B and LED_G are already defined in AmebaPro2's variant.h (LED_B 和 LED_G 已在 AmebaPro2 的 variant.h 中定義)</span>
+
+<span class="c1">// TFT LCD Pin Definitions (TFT LCD 引腳定義)</span>
+<span class="cp">#define TFT_RESET 5   // Reset pin
+#define TFT_DC    4   // Data/Command pin
+#define TFT_CS    SPI_SS // Chip Select pin (using default SPI SS)
+</span>
+<span class="n">AmebaILI9341</span> <span class="n">tft</span> <span class="o">=</span> <span class="n">AmebaILI9341</span><span class="p">(</span><span class="n">TFT_CS</span><span class="p">,</span> <span class="n">TFT_DC</span><span class="p">,</span> <span class="n">TFT_RESET</span><span class="p">);</span> <span class="c1">// TFT LCD object</span>
+
+<span class="cp">#define ILI9341_SPI_FREQUENCY 20000000 // SPI frequency for LCD
+</span>
+<span class="c1">// Constants for LCD dimensions and font sizes (for missing tft.height() and tft.getFontSize())</span>
+<span class="c1">// (用於 LCD 尺寸和字體大小的常數，因為缺少 tft.height() 和 tft.getFontSize())</span>
+<span class="c1">// ILI9341 is typically 240x320. With setRotation(2), it's logically 320px wide by 240px tall.</span>
+<span class="cp">#define LCD_WIDTH_ROTATED   320
+#define LCD_HEIGHT_ROTATED  240
+#define FONT_SIZE_LEVEL1_PIX_HEIGHT 8  // Approximate pixel height for font size 1
+#define FONT_SIZE_LEVEL2_PIX_HEIGHT 16 // Approximate pixel height for font size 2 (8 * 2)
+</span>
+<span class="c1">// --- Global Objects --- (全域物件)</span>
+<span class="n">WiFiSSLClient</span> <span class="n">client</span><span class="p">;</span> <span class="c1">// For secure HTTP connections to APIs (用於安全 HTTP 連接到 API)</span>
+<span class="n">GenAI</span> <span class="n">llm</span><span class="p">;</span>            <span class="c1">// Object for interacting with Generative AI LLM (Gemini Vision, STT, Text)</span>
+<span class="n">GenAI</span> <span class="n">tts</span><span class="p">;</span>            <span class="c1">// Object for interacting with Text-to-Speech (Google TTS)</span>
+<span class="n">AmebaFatFS</span> <span class="n">fs</span><span class="p">;</span>        <span class="c1">// File system object for SD card (SD 卡檔案系統物件)</span>
+
+<span class="c1">// For RTC (用於即時時鐘)</span>
+<span class="kt">long</span> <span class="kt">long</span> <span class="n">currentEpochSeconds</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">tm</span> <span class="o">*</span><span class="n">timeinfo</span><span class="p">;</span>
+
+<span class="c1">// For Audio Processing (用於音訊處理) - RE-ADDED</span>
+<span class="n">AudioSetting</span> <span class="nf">configA</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// Audio configuration (e.g., sample rate)</span>
+<span class="n">Audio</span> <span class="n">audio</span><span class="p">;</span>             <span class="c1">// Audio input from microphone</span>
+<span class="n">AAC</span> <span class="n">aac</span><span class="p">;</span>                 <span class="c1">// AAC audio encoder</span>
+<span class="n">MP4Recording</span> <span class="n">mp4</span><span class="p">;</span>        <span class="c1">// MP4 recording module (to save audio for STT)</span>
+<span class="n">StreamIO</span> <span class="nf">audioStreamer1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Stream from audio input to encoder</span>
+<span class="n">StreamIO</span> <span class="nf">audioStreamer2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Stream from encoder to MP4 recording</span>
+
+<span class="c1">// --- Function Prototypes --- (函數原型)</span>
+<span class="kt">void</span> <span class="nf">initWiFi</span><span class="p">();</span>
+<span class="kt">void</span> <span class="nf">init_tft</span><span class="p">();</span>
+<span class="n">bool</span> <span class="nf">tft_output</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">w</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">h</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">sdPlayMP3</span><span class="p">(</span><span class="n">String</span> <span class="n">filename</span><span class="p">);</span>
+<span class="n">String</span> <span class="nf">getFormattedTime</span><span class="p">();</span>
+
+<span class="c1">// --- Main Setup --- (主要設定)</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span> <span class="c1">// Initialize serial communication for debugging (初始化序列通訊用於偵錯)</span>
+
+    <span class="n">SPI</span><span class="p">.</span><span class="n">setDefaultFrequency</span><span class="p">(</span><span class="n">ILI9341_SPI_FREQUENCY</span><span class="p">);</span> <span class="c1">// Set SPI frequency for LCD (設定 LCD 的 SPI 頻率)</span>
+    <span class="n">initWiFi</span><span class="p">();</span> <span class="c1">// Initialize Wi-Fi connection (初始化 Wi-Fi 連線)</span>
+
+    <span class="c1">// Initialize RTC (初始化即時時鐘)</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Initializing RTC..."</span><span class="p">);</span>
+    <span class="n">rtc</span><span class="p">.</span><span class="n">Init</span><span class="p">();</span>
+    <span class="c1">// Set initial RTC time (adjust if needed, or get from NTP later)</span>
+    <span class="c1">// For now, setting a fixed initial time for demonstration purposes.</span>
+    <span class="c1">// In a real application, you might want to use NTP to get accurate time.</span>
+    <span class="c1">// (設定初始 RTC 時間（如有需要可調整，或稍後從 NTP 獲取）。</span>
+    <span class="c1">//  目前僅設定固定初始時間用於演示。在實際應用中，你可能希望使用 NTP 獲取準確時間。)</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">epochTime</span> <span class="o">=</span> <span class="n">rtc</span><span class="p">.</span><span class="n">SetEpoch</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Year, Month, Day, Hour, Min, Sec (年, 月, 日, 時, 分, 秒)</span>
+    <span class="n">rtc</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">epochTime</span><span class="p">);</span>
+
+    <span class="c1">// Configure Audio input, encoder, and MP4 recorder for Speech-to-Text - RE-ADDED</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Configuring audio for recording..."</span><span class="p">);</span>
+    <span class="n">audio</span><span class="p">.</span><span class="n">configAudio</span><span class="p">(</span><span class="n">configA</span><span class="p">);</span>
+    <span class="n">audio</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">aac</span><span class="p">.</span><span class="n">configAudio</span><span class="p">(</span><span class="n">configA</span><span class="p">);</span>
+    <span class="n">aac</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">mp4</span><span class="p">.</span><span class="n">configAudio</span><span class="p">(</span><span class="n">configA</span><span class="p">,</span> <span class="n">CODEC_AAC</span><span class="p">);</span>
+    <span class="n">mp4</span><span class="p">.</span><span class="n">setRecordingDuration</span><span class="p">(</span><span class="n">recordSeconds</span><span class="p">);</span>
+    <span class="n">mp4</span><span class="p">.</span><span class="n">setRecordingFileCount</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">mp4</span><span class="p">.</span><span class="n">setRecordingFileName</span><span class="p">(</span><span class="n">audioRecordFilename</span><span class="p">);</span>
+    <span class="n">mp4</span><span class="p">.</span><span class="n">setRecordingDataType</span><span class="p">(</span><span class="n">STORAGE_AUDIO</span><span class="p">);</span>
+
+    <span class="c1">// Link audio streams: Mic -&gt; AAC Encoder -&gt; MP4 Recorder - RE-ADDED</span>
+    <span class="n">audioStreamer1</span><span class="p">.</span><span class="n">registerInput</span><span class="p">(</span><span class="n">audio</span><span class="p">);</span>
+    <span class="n">audioStreamer1</span><span class="p">.</span><span class="n">registerOutput</span><span class="p">(</span><span class="n">aac</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">audioStreamer1</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"ERROR: Audio StreamIO link 1 (Mic to AAC) start failed!"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">audioStreamer2</span><span class="p">.</span><span class="n">registerInput</span><span class="p">(</span><span class="n">aac</span><span class="p">);</span>
+    <span class="n">audioStreamer2</span><span class="p">.</span><span class="n">registerOutput</span><span class="p">(</span><span class="n">mp4</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">audioStreamer2</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"ERROR: Audio StreamIO link 2 (AAC to MP4) start failed!"</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">audio</span><span class="p">.</span><span class="n">printInfo</span><span class="p">();</span> <span class="c1">// Print audio information to serial</span>
+
+    <span class="c1">// Camera Configuration (相機配置)</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Configuring Camera..."</span><span class="p">);</span>
+    <span class="n">config</span><span class="p">.</span><span class="n">setRotation</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// Set camera rotation if needed</span>
+    <span class="n">Camera</span><span class="p">.</span><span class="n">configVideoChannel</span><span class="p">(</span><span class="n">CHANNEL</span><span class="p">,</span> <span class="n">config</span><span class="p">);</span>
+    <span class="n">Camera</span><span class="p">.</span><span class="n">videoInit</span><span class="p">();</span>
+    <span class="n">Camera</span><span class="p">.</span><span class="n">channelBegin</span><span class="p">(</span><span class="n">CHANNEL</span><span class="p">);</span>
+    <span class="n">Camera</span><span class="p">.</span><span class="n">printInfo</span><span class="p">();</span> <span class="c1">// Print camera information to serial</span>
+
+    <span class="c1">// Configure GPIO pins (配置 GPIO 引腳)</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span> <span class="c1">// Button pin (assuming external pull-down if not INPUT_PULLUP)</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">LED_B</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span> <span class="c1">// Blue LED (now correctly using the pre-defined macro)</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">LED_G</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span> <span class="c1">// Green LED (now correctly using the pre-defined macro)</span>
+
+    <span class="c1">// Initialize TFT LCD (初始化 TFT LCD)</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Initializing TFT LCD..."</span><span class="p">);</span>
+    <span class="n">init_tft</span><span class="p">();</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"GenAI Vision &amp; TTS"</span><span class="p">);</span> <span class="c1">// Initial message on LCD</span>
+
+    <span class="c1">// Setup JPEG decoder callback for LCD (設定 JPEG 解碼器回調函數用於 LCD)</span>
+    <span class="n">TJpgDec</span><span class="p">.</span><span class="n">setJpgScale</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// Set scale factor (1 = no scaling, 2 = 1/2, 4 = 1/4, 8 = 1/8)</span>
+                           <span class="c1">// Use 1 for best quality if image size fits LCD, or higher for smaller images.</span>
+    <span class="n">TJpgDec</span><span class="p">.</span><span class="n">setCallback</span><span class="p">(</span><span class="n">tft_output</span><span class="p">);</span> <span class="c1">// Set the callback function for drawing JPEG blocks to TFT</span>
+
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Setup complete. Waiting for button press to interact..."</span><span class="p">);</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// Move cursor down for next message</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Press button to start"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// --- Main Loop --- (主循環)</span>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Check if the button is pressed</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">)</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Assuming button is HIGH when pressed</span>
+        <span class="c1">// Debounce delay (去抖延遲)</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">)</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">);</span> <span class="c1">// Wait until button is released</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span> <span class="c1">// Debounce after release</span>
+
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Button pressed! Starting interaction..."</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span> <span class="c1">// Clear LCD</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Speak your query:"</span><span class="p">);</span>
+        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_G</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span> <span class="c1">// Green LED ON while processing</span>
+
+        <span class="c1">// Step 1: Indicate recording with blinking blue LED (藍色 LED 閃爍表示錄音中)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_B</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+            <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+            <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_B</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+            <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Step 2: Record user's voice command for Speech-to-Text - RE-ADDED</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Recording audio for "</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">recordSeconds</span><span class="p">)</span> <span class="o">+</span> <span class="s">" seconds..."</span><span class="p">);</span>
+        <span class="c1">// Removed 'bool recordedTextSuccess =' as llm.geminiaudio returns String</span>
+        <span class="n">String</span> <span class="n">recordedText</span> <span class="o">=</span> <span class="n">llm</span><span class="p">.</span><span class="n">geminiaudio</span><span class="p">(</span><span class="n">Gemini_key</span><span class="p">,</span> <span class="n">audioRecordFilename</span><span class="p">,</span> <span class="s">"gemini-2.0-flash"</span><span class="p">,</span> <span class="n">mp4</span><span class="p">,</span> <span class="s">"Please transcribe the audio into text."</span><span class="p">,</span> <span class="n">client</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"User said: "</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">recordedText</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">recordedText</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">recordedText</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"Connect to generativelanguage.googleapis.com failed."</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Check for actual failure or error message</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Speech detected or transcription failed, or API connection failed. Please try again."</span><span class="p">);</span>
+            <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_G</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"API/Speech failed!"</span><span class="p">);</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">FONT_SIZE_LEVEL2_PIX_HEIGHT</span><span class="p">);</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Check WiFi/API Key/Certs."</span><span class="p">);</span> <span class="c1">// Added a more specific message for common issues</span>
+            <span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span> <span class="c1">// Wait a bit before allowing another press</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Display transcribed text on LCD</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"You said:"</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setFontSize</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">recordedText</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setFontSize</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">// Show transcribed text for a moment</span>
+
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Capturing image..."</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Capturing Image..."</span><span class="p">);</span>
+
+        <span class="c1">// Step 3: Camera take image (相機捕捉圖像)</span>
+        <span class="n">Camera</span><span class="p">.</span><span class="n">getImage</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_addr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">img_len</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Image captured: address=0x"</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n">img_addr</span><span class="p">,</span> <span class="n">HEX</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">", length="</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">img_len</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">" bytes"</span><span class="p">);</span>
+
+        <span class="c1">// Step 4: JPEG decode image &amp; display on TFT LCD (JPEG 解碼圖像並顯示在 TFT LCD 上)</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span> <span class="c1">// Clear LCD again for image display</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Reset cursor</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Displaying image on LCD..."</span><span class="p">);</span>
+        <span class="n">TJpgDec</span><span class="p">.</span><span class="n">drawJpg</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">img_addr</span><span class="p">,</span> <span class="n">img_len</span><span class="p">);</span> <span class="c1">// Draw JPEG from memory to LCD</span>
+
+        <span class="c1">// Step 5: Get current time from RTC (步驟 5：從 RTC 獲取當前時間)</span>
+        <span class="n">currentEpochSeconds</span> <span class="o">=</span> <span class="n">rtc</span><span class="p">.</span><span class="n">Read</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">formattedTime</span> <span class="o">=</span> <span class="n">getFormattedTime</span><span class="p">();</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Current Time: "</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">formattedTime</span><span class="p">);</span>
+
+        <span class="c1">// Step 6: Prepare prompt for LLM Vision (為 LLM 影像模型準備提示)</span>
+        <span class="c1">// Combine current time, image description request, AND user's voice query</span>
+        <span class="n">String</span> <span class="n">full_prompt_msg</span> <span class="o">=</span> <span class="s">"現在時間是 "</span> <span class="o">+</span> <span class="n">formattedTime</span> <span class="o">+</span> <span class="s">"。</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="n">full_prompt_msg</span> <span class="o">+=</span> <span class="s">"圖片中的內容是什麼？請使用繁體中文，簡潔地回答。</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="n">full_prompt_msg</span> <span class="o">+=</span> <span class="s">"用戶的語音查詢是：「"</span> <span class="o">+</span> <span class="n">recordedText</span> <span class="o">+</span> <span class="s">"」。請綜合圖片內容和用戶語音查詢，生成一段簡潔的繁體中文回應。"</span><span class="p">;</span>
+
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Sending prompt to LLM Vision: "</span> <span class="o">+</span> <span class="n">full_prompt_msg</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">LCD_HEIGHT_ROTATED</span> <span class="o">-</span> <span class="n">FONT_SIZE_LEVEL2_PIX_HEIGHT</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// Position text near bottom</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Analyzing image &amp; query..."</span><span class="p">);</span>
+
+        <span class="c1">// Step 7: Send image and prompt to LLM Vision (Gemini Vision)</span>
+        <span class="c1">// (步驟 7：將圖像和提示發送給 LLM 影像模型（Gemini Vision）)</span>
+        <span class="n">String</span> <span class="n">visionResponse</span> <span class="o">=</span> <span class="n">llm</span><span class="p">.</span><span class="n">geminivision</span><span class="p">(</span><span class="n">Gemini_key</span><span class="p">,</span> <span class="s">"gemini-2.0-flash"</span><span class="p">,</span> <span class="n">full_prompt_msg</span><span class="p">,</span> <span class="n">img_addr</span><span class="p">,</span> <span class="n">img_len</span><span class="p">,</span> <span class="n">client</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">visionResponse</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">visionResponse</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"Connect to generativelanguage.googleapis.com failed."</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Check for actual failure or error message</span>
+            <span class="n">visionResponse</span> <span class="o">=</span> <span class="s">"抱歉，無法識別圖片內容或獲取回應。請再試一次。連線錯誤。"</span><span class="p">;</span> <span class="c1">// More specific error message</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"LLM Vision API connection failed."</span><span class="p">);</span>
+            <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_G</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Vision API Failed!"</span><span class="p">);</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">FONT_SIZE_LEVEL2_PIX_HEIGHT</span><span class="p">);</span>
+            <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Check WiFi/API Key/Certs."</span><span class="p">);</span>
+            <span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"LLM Vision Response: "</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">visionResponse</span><span class="p">);</span>
+
+        <span class="c1">// Step 8: Text-To-Speech &amp; play mp3 file (文字轉語音並播放 mp3 檔案)</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span> <span class="c1">// Clear LCD for TTS status</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Broadcast:"</span><span class="p">);</span>
+        <span class="c1">// Display LLM response on LCD</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setFontSize</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// Smaller font for detail</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">visionResponse</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setFontSize</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// Revert to larger font for next status</span>
+
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Converting text to speech..."</span><span class="p">);</span>
+        <span class="c1">// Removed boolean assignment as tts.googletts is a void function.</span>
+        <span class="c1">// Success of TTS is now primarily checked by sdPlayMP3 attempting to open the file.</span>
+        <span class="n">tts</span><span class="p">.</span><span class="n">googletts</span><span class="p">(</span><span class="n">mp3Filename</span><span class="p">,</span> <span class="n">visionResponse</span><span class="p">,</span> <span class="s">"zh-TW"</span><span class="p">);</span> <span class="c1">// "zh-TW" for Traditional Chinese</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span> <span class="c1">// Give some time for file to be written</span>
+
+        <span class="c1">// Step 9: Play the generated MP3 (播放生成的 MP3)</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Playing broadcast..."</span><span class="p">);</span>
+        <span class="n">sdPlayMP3</span><span class="p">(</span><span class="n">mp3Filename</span><span class="p">);</span> <span class="c1">// This function now has improved error handling</span>
+
+        <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_G</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span> <span class="c1">// Green LED OFF after processing</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Broadcast complete. Waiting for next button press..."</span><span class="p">);</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">LCD_HEIGHT_ROTATED</span> <span class="o">-</span> <span class="n">FONT_SIZE_LEVEL2_PIX_HEIGHT</span><span class="p">);</span> <span class="c1">// Position text near bottom</span>
+        <span class="n">tft</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Done. Press button."</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// Small delay to prevent busy-waiting</span>
+<span class="p">}</span>
+
+<span class="c1">// --- Helper Functions --- (輔助函數)</span>
+
+<span class="c1">// Initialize Wi-Fi connection (初始化 Wi-Fi 連線)</span>
+<span class="kt">void</span> <span class="nf">initWiFi</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">WiFi</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">wifi_ssid</span><span class="p">,</span> <span class="n">wifi_pass</span><span class="p">);</span>
+        <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Connecting to "</span><span class="p">);</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">wifi_ssid</span><span class="p">);</span>
+
+        <span class="kt">uint32_t</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">((</span><span class="n">millis</span><span class="p">()</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10000</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 10 second timeout</span>
+                <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Wi-Fi connection timed out. Retrying..."</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">==</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Wi-Fi connected!"</span><span class="p">);</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"STA IP address: "</span><span class="p">);</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">WiFi</span><span class="p">.</span><span class="n">localIP</span><span class="p">());</span>
+            <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span> <span class="c1">// Exit function if connected</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Failed to connect to Wi-Fi after multiple attempts."</span><span class="p">);</span>
+    <span class="c1">// In a real application, you might want to add error handling here.</span>
+<span class="p">}</span>
+
+<span class="c1">// Initialize TFT LCD (初始化 TFT LCD)</span>
+<span class="kt">void</span> <span class="nf">init_tft</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setRotation</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// Adjust rotation as needed for your LCD orientation</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">clr</span><span class="p">();</span> <span class="c1">// Clear the screen</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Set cursor to top-left</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setForeground</span><span class="p">(</span><span class="n">ILI9341_GREEN</span><span class="p">);</span> <span class="c1">// Set text color</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">setFontSize</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// Set font size (1 is smallest, 2 is medium, etc.)</span>
+<span class="p">}</span>
+
+<span class="c1">// Callback function for JPEG decoder to draw blocks to TFT (JPEG 解碼器繪製區塊到 TFT 的回調函數)</span>
+<span class="n">bool</span> <span class="nf">tft_output</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">w</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">h</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">tft</span><span class="p">.</span><span class="n">drawBitmap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">bitmap</span><span class="p">);</span> <span class="c1">// Draw the decoded bitmap block</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Return 1 to decode next block</span>
+<span class="p">}</span>
+
+<span class="c1">// Play MP3 file from SD card (從 SD 卡播放 MP3 檔案)</span>
+<span class="kt">void</span> <span class="nf">sdPlayMP3</span><span class="p">(</span><span class="n">String</span> <span class="n">filename</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Attempt to begin file system operation</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">fs</span><span class="p">.</span><span class="n">begin</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"ERROR: Failed to mount SD card file system!"</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span> <span class="c1">// Exit if SD card cannot be mounted</span>
+    <span class="p">}</span>
+
+    <span class="n">String</span> <span class="n">filepath</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="n">fs</span><span class="p">.</span><span class="n">getRootPath</span><span class="p">())</span> <span class="o">+</span> <span class="n">filename</span><span class="p">;</span>
+    <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="n">fs</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">MP3</span><span class="p">);</span> <span class="c1">// Open file as MP3 type</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"ERROR: Failed to open MP3 file: "</span> <span class="o">+</span> <span class="n">filepath</span> <span class="o">+</span> <span class="s">". Does it exist?"</span><span class="p">);</span>
+        <span class="n">fs</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="c1">// Ensure file system is unmounted on error</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">file</span><span class="p">.</span><span class="n">setMp3DigitalVol</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span> <span class="c1">// Set volume to maximum (0-255) to ensure audibility</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Playing MP3: "</span> <span class="o">+</span> <span class="n">filepath</span><span class="p">);</span>
+    <span class="n">file</span><span class="p">.</span><span class="n">playMp3</span><span class="p">();</span> <span class="c1">// Start playback (this is non-blocking)</span>
+
+    <span class="c1">// Add a delay to allow the MP3 to play.</span>
+    <span class="c1">// In a production scenario, you might want a more sophisticated way to check if playback has finished.</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Waiting for MP3 playback to finish (5 seconds)..."</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span> <span class="c1">// Example: wait 5 seconds for audio to play</span>
+
+    <span class="n">file</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>   <span class="c1">// Close file after playback is initiated</span>
+    <span class="n">fs</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>       <span class="c1">// Unmount SD card file system</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"MP3 playback finished."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Get formatted time string from RTC (從 RTC 獲取格式化的時間字串)</span>
+<span class="n">String</span> <span class="nf">getFormattedTime</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">timeinfo</span> <span class="o">=</span> <span class="n">localtime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">currentEpochSeconds</span><span class="p">);</span>
+    <span class="n">String</span> <span class="n">timeString</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+    <span class="c1">// Format:YYYY-MM-DD HH:MM:SS</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="n">String</span><span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_year</span> <span class="o">+</span> <span class="mi">1900</span><span class="p">);</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="s">"-"</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_mon</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="n">timeString</span> <span class="o">+=</span> <span class="s">"0"</span><span class="p">;</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="n">String</span><span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_mon</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="s">"-"</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_mday</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="n">timeString</span> <span class="o">+=</span> <span class="s">"0"</span><span class="p">;</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="n">String</span><span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_mday</span><span class="p">);</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="s">" "</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_hour</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="n">timeString</span> <span class="o">+=</span> <span class="s">"0"</span><span class="p">;</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="n">String</span><span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_hour</span><span class="p">);</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="s">":"</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_min</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="n">timeString</span> <span class="o">+=</span> <span class="s">"0"</span><span class="p">;</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="n">String</span><span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_min</span><span class="p">);</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="s">":"</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_sec</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="n">timeString</span> <span class="o">+=</span> <span class="s">"0"</span><span class="p">;</span>
+    <span class="n">timeString</span> <span class="o">+=</span> <span class="n">String</span><span class="p">(</span><span class="n">timeinfo</span><span class="o">-&gt;</span><span class="n">tm_sec</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">timeString</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="實作成果">實作成果</h2>
+
+<h3 id="照片">照片</h3>
+
+<p>設備圖<br />
+<img src="/assets/photo/Edge-Ai-Class-Project/AI視覺輔助系統/178638.jpg" alt="imag" /></p>
+
+<p>Damo(全)的序列阜輸出結果
+<img src="/assets/photo/Edge-Ai-Class-Project/AI視覺輔助系統/螢幕擷取畫面%202025-06-12%20215619.png" alt="imag" /></p>
+
+<h3 id="影片">影片</h3>
+
+<p><strong>小Damo</strong></p>
+
+<p><a href="https://www.youtube.com/watch?v=jzz600KlVgc"><img src="https://img.youtube.com/vi/jzz600KlVgc/0.jpg" alt="IMAGE ALT TEXT HERE" /></a><br />
+點擊圖片播放</p>
+
+<p><strong>Damo(全)</strong></p>
+
+<p><a href="https://www.youtube.com/watch?v=7egU_T91SW0"><img src="https://img.youtube.com/vi/7egU_T91SW0/0.jpg" alt="IMAGE ALT TEXT HERE" /></a><br />
+點擊圖片播放</p>
+
+
+
+  
+    <div class="post-meta">
+      <i class="post-tags-icon fas fa-tag"></i>
+      <ul class="post-tags"><li>
+            <span class="post-tag">入門</span></li><li>
+            <span class="post-tag">學習</span></li><li>
+            <span class="post-tag">blog</span></li></ul>
+    </div>
+  
+
+  
+</article>
+
+        </div>
+        <footer class="footer pure-g">
+  <div class="pure-u-1 pure-u-md-1-2">
+    <small>
+      &copy;&nbsp;<time datetime="2025-06-14T23:16:14+08:00">2025</time>&nbsp;<a href="" target="_blank">Li Kai_Huang</a>. All right reserved.
+    </small>
+  </div>
+
+  <div class="pure-u-1 pure-u-md-1-2">
+    <small>
+      Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> & <a href="https://github.com/zivong/jekyll-theme-hydure" target="_blank">Hydure</a>
+    </small>
+  </div>
+</footer>
+
+      </div>
+    </div>
+
+    
+
+    
+  </body>
+</html>

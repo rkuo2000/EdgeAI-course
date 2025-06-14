@@ -2,8 +2,8 @@
 layout: post # 指定文章佈局，通常是 post
 title: 我的第一篇部落格文章：撰寫指南與 Markdown 簡介
 date: 2025-06-13 11:30:00 +0800 # 發表日期和時間 (請根據您當前的時區調整 +0800 代表 UTC+8)
-categories: [指南, Markdown] # 文章分類，您可以自訂
-tags: [入門, 測試, 教學, 部落格] # 文章標籤，您可以自訂
+categories: [筆記, 網頁] # 文章分類，您可以自訂
+tags: [測試, Markdown, blog] # 文章標籤，您可以自訂
 description: 這篇文章是我的第一篇部落格文章，旨在說明如何撰寫新文章以及 Markdown 的基本語法。
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設為 false
 comments: true # 如果這篇文章需要啟用評論，請設為 true
