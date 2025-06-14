@@ -10,19 +10,18 @@ comments: false # 如果這篇文章需要啟用評論，請設為 true
 permalink: /AI-Class/project4/
 ---
 
-# AI 輔助英語教學
+
 
 本報告旨在介紹一款創新的AI 輔助英語教學系統，旨在為英語學習者提供即時、互動且個性化的學習體驗。該系統的核心功能是結合視覺辨識、語音合成與自然語言處理能力，模擬一位智能家教。當使用者按下按鈕拍攝單字卡影像後，系統會立即將圖像傳送至 Google Gemini Vision 進行單字辨識，隨後透過系統會將辨識出的單字發送至 Google Gemini LLM，由 AI 即時生成一個例句。
 
 
-- [AI 輔助英語教學](#ai-輔助英語教學)
-  - [功能](#功能)
-  - [GenAI程式碼設計流程](#genai程式碼設計流程)
-  - [程式碼產生提示](#程式碼產生提示)
-  - [程式碼](#程式碼)
-    - [程式重點 \<**提示字:** *"Just say the word in the picture?"  \&*"please make a short sentence with"+ word\*](#程式重點-提示字-just-say-the-word-in-the-picture--please-make-a-short-sentence-with-word)
-  - [實作成果](#實作成果)
-    - [影片](#影片)
+- [功能](#功能)
+- [GenAI程式碼設計流程](#genai程式碼設計流程)
+- [程式碼產生提示](#程式碼產生提示)
+- [程式碼](#程式碼)
+  - [程式重點 \<**提示字:** *"Just say the word in the picture?"  \&*"please make a short sentence with"+ word\*](#程式重點-提示字-just-say-the-word-in-the-picture--please-make-a-short-sentence-with-word)
+- [實作成果](#實作成果)
+  - [影片](#影片)
 
 ## 功能
 

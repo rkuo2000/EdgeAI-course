@@ -9,19 +9,18 @@ mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
 permalink: /AI-Class/
 ---
-# Edge AI Class
+
 這學期的專題作業  
 
-- [Edge AI Class](#edge-ai-class)
-  - [EdgeAI MCU System Diagram](#edgeai-mcu-system-diagram)
-  - [AI 輔助分類回收系統](#ai-輔助分類回收系統)
-  - [AI 監視錄影系統](#ai-監視錄影系統)
-  - [AI 看圖說故事](#ai-看圖說故事)
-  - [AI 輔助英語教學](#ai-輔助英語教學)
-  - [AI 情緒感知音樂播放器](#ai-情緒感知音樂播放器)
-  - [AI 盲人導航系統](#ai-盲人導航系統)
-  - [AI 盲人視覺輔助系統](#ai-盲人視覺輔助系統)
-  - [總體心得](#總體心得)
+- [EdgeAI MCU System Diagram](#edgeai-mcu-system-diagram)
+- [AI 輔助分類回收系統](#ai-輔助分類回收系統)
+- [AI 監視錄影系統](#ai-監視錄影系統)
+- [AI 看圖說故事](#ai-看圖說故事)
+- [AI 輔助英語教學](#ai-輔助英語教學)
+- [AI 情緒感知音樂播放器](#ai-情緒感知音樂播放器)
+- [AI 盲人導航系統](#ai-盲人導航系統)
+- [AI 盲人視覺輔助系統](#ai-盲人視覺輔助系統)
+- [總體心得](#總體心得)
 
 ## EdgeAI MCU System Diagram 
 
