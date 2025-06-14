@@ -42,6 +42,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag # 推薦加入，用於 SEO 優化
   - jekyll-archives # <-- 添加這一行
+  - jekyll-mermaid
 
 # Sass 設定 (通常不需要修改，除非您知道自己在做什麼)
 sass:

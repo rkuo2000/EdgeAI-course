@@ -269,9 +269,9 @@ void sdPlayMP3(String filename) {
 1. qrcode偵測 Damo  
   
   
-![imag](/assets/photo/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20122548.png)
+![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20122548.png)
 
-![imag](/assets/photo/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20142153.png)
+![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20142153.png)
 
 ### 影片
 

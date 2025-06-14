@@ -285,17 +285,17 @@ void loop() {
 
 ### Demo 數據
 
-![imag](/assets/photo/Edge-Ai-Class-Project/AI監視器/image.png)
+![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI監視器/image.png)
 
 以下是檔案的詳細資料
 
-![imag](/assets/photo/Edge-Ai-Class-Project/AI監視器/20250522_210653.jpg)
+![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI監視器/20250522_210653.jpg)
 
     20250522_210653.txt
 
     The image shows a computer screen displaying a webpage for Anaconda, a Python distribution. The webpage is primarily in Chinese, with some English words such as "Anaconda" and "Install Anaconda on Ubuntu".  The page seems to be showing instructions or information regarding installation and other details related to Anaconda. The computer is in a computer lab setting, with other computers visible in the background.  Several people are partially visible in the background, seemingly working on other computers.
 
-![imag](/assets/photo/Edge-Ai-Class-Project/AI監視器/20250522_210755.jpg)
+![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI監視器/20250522_210755.jpg)
 
     20250522_210755.txt
 
@@ -303,7 +303,7 @@ void loop() {
     The image shows a computer lab or internet cafe setting. The focus is on a  large computer monitor in the foreground, displaying a webpage that is   partially visible and blurry.  The webpage seems to contain text and possibly     an image or advertisement.  Surrounding this main monitor are several other     computer monitors, arranged in rows. The monitors are relatively small compared     to the one in the foreground, and their screens are partially obscured. The     room itself appears to be a typical office or classroom setting, with a white   ceiling, fluorescent lighting, and what look like cubicle partitions partially    visible behind the computers.  A keyboard is visible in the bottom-left corner,    partially obscuring the edge of a laptop.  The overall lighting is bright but  somewhat washed out, likely due to the fluorescent lights.
     The text on the main monitor is unclear and unreadable due to blurriness and    distance.  Therefore, no summary of the webpage's content can be provided.
 
-![imag](/assets/photo/Edge-Ai-Class-Project/AI監視器/20250522_210851.jpg)
+![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI監視器/20250522_210851.jpg)
 
     20250522_210851.jpg
 

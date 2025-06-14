@@ -17,7 +17,6 @@ permalink: /AI-Class/project7/
 - [AI 盲人視覺輔助系統](#ai-盲人視覺輔助系統)
   - [功能](#功能)
   - [GenAI程式碼設計流程](#genai程式碼設計流程)
-    - [2. 詳細軟體設計流程圖 (Detailed Software Design Flowchart) - Markdown 程式碼 (最終且絕對修正版)](#2-詳細軟體設計流程圖-detailed-software-design-flowchart---markdown-程式碼-最終且絕對修正版)
   - [程式碼產生提示](#程式碼產生提示)
   - [程式碼](#程式碼)
   - [實作成果](#實作成果)
@@ -78,80 +77,6 @@ graph TD
 * 我在 `N{TTS 生成整合 MP3 語音};` 節點中，這個節點本身沒有括號，保持不變。
 
 ---
-
-### 2. 詳細軟體設計流程圖 (Detailed Software Design Flowchart) - Markdown 程式碼 (最終且絕對修正版)
-
-```markdown
-```mermaid
-graph TD
-    A[系統初始化] --> B[設定 Wi-Fi 連線];
-    B --> C[初始化攝影機模組];
-    C --> D[初始化 RTC 模組];
-    D --> E[初始化麥克風輸入模組];
-    E --> F[初始化音訊輸出模組];
-    F --> G{等待觸摸 ADC 訊號};
-
-    G -- 觸摸訊號觸發 --> H[開始多模態數據採集];
-    H --> I[捕捉當前影像幀];
-    H --> J[讀取當前 RTC 時間];
-    H --> K[錄製音訊 N 秒 - 麥克風];
-    
-    I --> L[影像數據預處理/壓縮為 JPG];
-    J --> M[格式化時間數據為文本];
-    K --> N[音訊數據預處理/編碼為適當格式];
-    
-    L & M & N --> O[組裝多模態 JSON/HTTP 請求 Payload];
-    O --> P[發送 Payload 至 Google Gemini API];
-    P --> Q{等待 Gemini API 回應};
-
-    Q -- 成功接收 --> R[解析 Gemini JSON 回應];
-    R --> S[提取所有文本回應 例如 場景描述、時間訊息、語音回覆];
-    S --> T[將提取的所有文本拼接為單一字符串 或 分段處理];
-    T --> U[準備 HTTP/HTTPS 請求到 Google TTS];
-    U --> V[發送拼接文本至 Google TTS API];
-    V --> W{等待 TTS API 回應};
-
-    W -- 成功接收 --> X[接收並緩衝整合 MP3 語音數據流];
-    X --> Y[MP3 解碼與音訊播放];
-    Y --> Z[等待語音播放完成];
-    Z --> G;
-
-    Q -- 失敗/超時 --> AA[處理 Gemini 錯誤/重試/日誌];
-    AA --> G;
-
-    W -- 失敗/超時 --> BB[處理 TTS 錯誤/重試/日誌];
-    BB --> G;
-```
-
-**流程圖說明：**
-
-* **開始 (Start)：** 系統啟動流程。
-* **系統啟動/待機 (System Startup/Standby)：** 系統初始化並等待用戶觸發。
-* **用戶觸摸感應器 (ADC) (User Touches Sensor (ADC))：** 用戶透過觸摸感應器（ADC 輸入）觸發系統。
-* **觸摸信號 (Touch Signal)：** 觸摸感應器發出的信號。
-* **同步執行 (Execute Simultaneously)：** 表示以下三個動作幾乎同時進行。
-    * **拍攝影像 (Capture Image)：** 攝影機捕捉當前環境影像。
-    * **讀取 RTC 時間 (Read RTC Time)：** 讀取實時時鐘的當前時間。
-    * **麥克風錄製音訊 (Microphone Record Audio)：** 麥克風錄製用戶的語音輸入（如果用戶有提問）。
-* **影像數據 (Image Data)：** 捕捉到的圖像數據。
-* **時間數據 (Time Data)：** 從 RTC 獲取的時間信息。
-* **音訊數據 (Audio Data)：** 麥克風錄製的音訊數據。
-* **打包多模態數據 (Package Multi-modal Data)：** 將影像、時間和音訊數據整合為一個請求包。
-* **發送打包數據至 Google Gemini (多模態輸入) (Send Packaged Data to Google Gemini (Multi-modal Input))：** 將整合後的數據發送給 Google Gemini API。
-* **Gemini 分析並返回多段文本回應 (Gemini Analyzes & Returns Multiple Text Responses)：** Gemini 處理多模態輸入，並返回現場狀況描述、時間相關信息和語音交互的回應等文本。
-* **成功返回 (Successful Return)：** 如果 Gemini 成功返回回應。
-* **接收 Gemini 回應文本 (Receive Gemini Response Text)：** 接收來自 Gemini 的所有文本內容。
-* **將所有文本發送至 Google TTS (Send All Text to Google TTS)：** 將從 Gemini 獲得的所有文本發送給 Google TTS API。
-* **TTS 生成整合 MP3 語音 (TTS Generates Integrated MP3 Audio)：** Google TTS 將多段文本整合成一個或多個 MP3 語音檔案。
-* **成功 (Success)：** 如果 TTS 成功生成語音。
-* **接收整合 MP3 語音檔 (Receive Integrated MP3 Audio File)：** 接收從 TTS 返回的 MP3 語音數據。
-* **失敗 (Failure)：** 如果 TTS 服務失敗或超時。
-* **TTS 錯誤處理/提示音 (TTS Error Handling/Prompt Tone)：** 執行錯誤處理或播放提示音。
-* **播放整合 MP3 語音 (Play Integrated MP3 Audio)：** 透過音訊輸出裝置播放整合後的語音。
-* **語音播報完成 (Voice Broadcast Complete)：** 語音播放結束。
-* **Gemini 錯誤處理/提示音 (Gemini Error Handling/Prompt Tone)：** 如果 Gemini API 呼叫失敗，執行錯誤處理或播放提示音。
-* **返回到系統啟動/待機 (Return to System Startup/Standby)：** 系統回到初始狀態，等待下一次觸發。
-
 
 ## 程式碼產生提示
     首先我有一個按鈕是用來啟動的
@@ -569,10 +494,10 @@ String getFormattedTime() {
 ### 照片
 
 設備圖  
-![imag](/assets/photo/Edge-Ai-Class-Project/AI視覺輔助系統/178638.jpg)
+![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI視覺輔助系統/178638.jpg)
 
 Damo(全)的序列阜輸出結果
-![imag](/assets/photo/Edge-Ai-Class-Project/AI視覺輔助系統/螢幕擷取畫面%202025-06-12%20215619.png)
+![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI視覺輔助系統/螢幕擷取畫面%202025-06-12%20215619.png)
 
 ### 影片
  
