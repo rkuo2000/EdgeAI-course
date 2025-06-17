@@ -12,7 +12,7 @@ comments: false # 如果這篇文章需要啟用評論，請設為 true
 
 一、CPU 結構圖
 
-![CPU 架構圖](/blog/assets/photo/Verilog/image.png)
+![CPU 架構圖](/assets/photo/Verilog/image.png)
 
 > 註：CPU 結構採單週期架構，所有模組皆於一個時脈週期內完成。
 
@@ -260,7 +260,7 @@ memory[9] = 8'b001_11_001; // LOAD R3 ← RAM[1]
 memory[10]= 8'b101_01010;  // JMP loop HALT (to address 10)  
 
 ### 模擬結果波形圖
-![波形圖](/blog/assets/photo/Verilog/螢幕擷取畫面 2025-06-17 085349.png)
+![波形圖](/assets/photo/Verilog/螢幕擷取畫面 2025-06-17 085349.png)
 
 ### 測試重點
 
