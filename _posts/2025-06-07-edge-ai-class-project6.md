@@ -80,7 +80,7 @@ graph TD
 
 ## 程式碼產生提示
 
-![img](photo/AI盲人導航系統/螢幕擷取畫面%202025-06-14%20014155.png)  
+![img](image/AI盲人導航系統/螢幕擷取畫面%202025-06-14%20014155.png)  
 ```我想請你幫我做一個滿足以下條件的程式
 功能： 掃描二維碼說出位置
 步驟1. 掃描二維碼取得文字（地點名稱）
@@ -268,9 +268,9 @@ void sdPlayMP3(String filename) {
 1. qrcode偵測 Damo  
   
   
-![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20122548.png)
+![imag](/blog/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20122548.png)
 
-![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20142153.png)
+![imag](/blog/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20142153.png)
 
 ### 影片
 

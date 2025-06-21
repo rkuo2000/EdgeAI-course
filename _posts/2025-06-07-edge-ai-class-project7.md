@@ -494,10 +494,10 @@ String getFormattedTime() {
 ### 照片
 
 設備圖  
-![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI視覺輔助系統/178638.jpg)
+![imag](/blog/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/178638.jpg)
 
 Damo(全)的序列阜輸出結果
-![imag](/blog/assets/photo/Edge-Ai-Class-Project/AI視覺輔助系統/螢幕擷取畫面%202025-06-12%20215619.png)
+![imag](/blog/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/螢幕擷取畫面%202025-06-12%20215619.png)
 
 ### 影片
  
