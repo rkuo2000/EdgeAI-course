@@ -7,7 +7,6 @@ tags: [EdgeAI-MCU, AMB82-mini] # 文章標籤，您可以自訂
 description: AMB82-mini 簡介與開發環境介紹
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
-permalink: /EdgeAI-MCU/
 ---
 
 ## AMB82-mini 
