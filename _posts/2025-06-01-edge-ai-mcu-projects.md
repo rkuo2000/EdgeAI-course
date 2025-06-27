@@ -7,7 +7,7 @@ tags: [EdgeAI-MCU,AI-coding] # 文章標籤，您可以自訂
 description: AMB82-mini 邊緣運算專題實作計畫
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
-permalink: /GenAI-course/
+permalink: /project-overview/
 ---
 
 ## 內容綱要
