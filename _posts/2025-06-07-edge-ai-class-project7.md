@@ -2,15 +2,13 @@
 layout: post # 指定文章佈局，通常是 post
 title: AI 盲人視覺輔助系統
 date: 2025-06-07 15:40:00 +0800 # 發表日期和時間 (請根據您當前的時區調整 +0800 代表 UTC+8)
-categories: [1131邊緣運算課] # 文章分類，您可以自訂
-tags: [入門,學習,blog] # 文章標籤，您可以自訂
+categories: [專題實作] # 文章分類，您可以自訂
+tags: [程式範例, AMB82-mini, AI-coding] # 文章標籤，您可以自訂
 description: 這篇文章會講解我邊緣運算的第七個專案 AI 盲人視覺輔助系統
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
 permalink: /EdgeAI-MCU/project7/
 ---
-
-
 
 本報告旨在介紹一款創新且多功能的AI 盲人視覺輔助系統。該系統旨在透過整合多種感官輸入與先進人工智慧，為視障人士提供即時、全面的環境感知與語音導引。其核心功能包括：透過觸摸感應觸發系統；隨後，系統會拍攝當前影像並傳送至 Google Gemini Vision 詢問現場狀況；同時，它會將實時時鐘 (RTC) 時間資訊發送給 Gemini，以獲得時間相關的回應；更進一步地，系統支援麥克風錄製用戶語音並傳送給 Gemini 進行理解，AI 將返回相關文本回應，最終所有來自 Gemini 的文本都將透過文字轉語音 (TTS) 播放出來
 
@@ -494,22 +492,19 @@ String getFormattedTime() {
 ### 照片
 
 設備圖  
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/178638.jpg)
+![img](/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/178638.jpg)
 
-Damo(全)的序列阜輸出結果
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/螢幕擷取畫面%202025-06-12%20215619.png)
+Demo(全)的序列阜輸出結果
+![img](/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/螢幕擷取畫面%202025-06-12%20215619.png)
 
 ### 影片
  
-**小Damo**  
+**Demo(小)**  
   
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jzz600KlVgc/0.jpg)](https://www.youtube.com/watch?v=jzz600KlVgc)  
 點擊圖片播放  
-  
-  
 
-
-**Damo(全)** 
+**Demo(全)** 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/7egU_T91SW0/0.jpg)](https://www.youtube.com/watch?v=7egU_T91SW0)  
 點擊圖片播放
