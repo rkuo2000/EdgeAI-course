@@ -284,11 +284,11 @@ void loop() {
 
 ### Demo 數據
 
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI監視器/image.png)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI監視器/image.png)
 
 以下是檔案的詳細資料
 
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI監視器/20250522_210653.jpg)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI監視器/20250522_210653.jpg)
 
     20250522_210653.txt
 
