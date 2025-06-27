@@ -492,20 +492,18 @@ String getFormattedTime() {
 ### 照片
 
 設備圖  
-![img](/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/178638.jpg)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/178638.jpg)
 
 Demo(全)的序列阜輸出結果
-![img](/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/螢幕擷取畫面%202025-06-12%20215619.png)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI視覺輔助系統/螢幕擷取畫面%202025-06-12%20215619.png)
 
 ### 影片
  
-**Demo(小)**  
-  
+Demo(小)<br> 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jzz600KlVgc/0.jpg)](https://www.youtube.com/watch?v=jzz600KlVgc)  
-點擊圖片播放  
+點擊圖片播放<br>
 
-**Demo(全)** 
-
+Demo(全)<br> 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/7egU_T91SW0/0.jpg)](https://www.youtube.com/watch?v=7egU_T91SW0)  
-點擊圖片播放
+點擊圖片播放<br>
 
