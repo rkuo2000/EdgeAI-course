@@ -2,12 +2,12 @@
 layout: post # 指定文章佈局，通常是 post
 title: AI 監視錄影系統
 date: 2025-06-07 15:40:00 +0800 # 發表日期和時間 (請根據您當前的時區調整 +0800 代表 UTC+8)
-categories: [1131邊緣運算課] # 文章分類，您可以自訂
-tags: [入門,學習,blog] # 文章標籤，您可以自訂
+categories: [專題實作] # 文章分類，您可以自訂
+tags: [程式範例, AI-coding] # 文章標籤，您可以自訂
 description: 這篇文章會講解我邊緣運算的第二個專案 AI 監視錄影系統
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
-permalink: /EdgeAI-MCU/project2/
+permalink: /AMB82-mini/project2/
 ---
 
 
