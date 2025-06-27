@@ -264,9 +264,9 @@ void sdPlayMP3(String filename) {
 
 1. QRcode偵測 Demo    
   
-![img](/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20122548.png)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20122548.png)
 
-![img](/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20142153.png)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20142153.png)
 
 ### 影片
 
