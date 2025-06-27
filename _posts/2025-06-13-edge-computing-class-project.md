@@ -24,17 +24,7 @@ permalink: /GenAI-course/
 
 ## EdgeAI MCU System Diagram 
 
-```mermaid
-graph TD
-    subgraph EdgeAI MCU System
-        AMB82_mini -->|SPI| TFT-LCD
-        AMB82_mini -->|camif| Camera
-        AMB82_mini -->|gpio| Button
-        AMB82_mini -->|gpio| SD_card
-        AMB82_mini -->|amp| Speaker
-        AMB82_mini -->|adc| MEMS mic
-    end
-```
+
 
 ## [AI 輔助分類回收系統](project1/index.html)
 本報告旨在介紹一個基於邊緣 AI 技術的輔助回收系統。該系統利用 **Realtek AMB82_mini** 微控制器作為核心處理單元，整合影像辨識與語音互動功能，旨在實現對回收物品的自動識別與語音指引，從而提升回收效率與正確性。
