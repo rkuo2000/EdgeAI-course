@@ -31,9 +31,8 @@ author:
 #google_analytics_4_measurement_id: G-XXXXXXXXXX # 您的 Google Analytics 4 測量 ID (如果沒有，留空或註釋掉)
 
 # 分類和標籤頁面路徑 (重要，請確保已複製 _layouts/category.html 和 _layouts/tag.html 並創建 /categories/index.html, /tags/index.html)
-tag_path: /tags
 category_path: /categories
-
+tag_path: /tags
 
 # 插件設定
 # 確保這些插件也存在於您的 Gemfile 中
@@ -52,8 +51,8 @@ sass:
 # jekyll-archives configuration
 jekyll-archives:
   enabled:
+    - categories  
     - tags
-    - categories
   layout: "archive" # Jekyll-archives 會使用這個佈局來渲染標籤/分類頁面。
                     # 您需要確保 _layouts/archive.html (或您自訂的佈局) 存在。
   #permalink: "/:collection/:name/" # 預設的永久連結格式
