@@ -23,9 +23,9 @@ permalink: /EdgeAI-MCU/
 - [學習心得](#學習心得)
 
 ## EdgeAI MCU System Diagram 
-![](./assets/image/EdgeAI-MCU-projects/AMB82-mini-system-block-diagram.png)
+![](assets/image/EdgeAI-MCU-projects/AMB82-mini-system-block-diagram.png)
 
-![](./assets/image/EdgeAI-MCU-projects/AMB82-mini_ILI9341_PAM8403.jpg)
+![](assets/image/EdgeAI-MCU-projects/AMB82-mini_ILI9341_PAM8403.jpg)
 
 ## 專題介紹
 
