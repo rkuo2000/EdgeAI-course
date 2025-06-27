@@ -2,18 +2,15 @@
 layout: post # 指定文章佈局，通常是 post
 title: AI 輔助英語教學
 date: 2025-06-07 15:40:00 +0800 # 發表日期和時間 (請根據您當前的時區調整 +0800 代表 UTC+8)
-categories: [1131邊緣運算課] # 文章分類，您可以自訂
-tags: [入門,學習,blog] # 文章標籤，您可以自訂
+categories: [專題實作] # 文章分類，您可以自訂
+tags: [程式範例, AMB82-mini, AI-coding] # 文章標籤，您可以自訂
 description: 這篇文章會講解我邊緣運算的第四個專案 AI 輔助英語教學
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
 permalink: /EdgeAI-MCU/project4/
 ---
 
-
-
 本報告旨在介紹一款創新的AI 輔助英語教學系統，旨在為英語學習者提供即時、互動且個性化的學習體驗。該系統的核心功能是結合視覺辨識、語音合成與自然語言處理能力，模擬一位智能家教。當使用者按下按鈕拍攝單字卡影像後，系統會立即將圖像傳送至 Google Gemini Vision 進行單字辨識，隨後透過系統會將辨識出的單字發送至 Google Gemini LLM，由 AI 即時生成一個例句。
-
 
 - [功能](#功能)
 - [GenAI程式碼設計流程](#genai程式碼設計流程)
@@ -268,7 +265,7 @@ void sdPlayMP3(String filename) {
 
 ### 影片
 
-Damo影片
+Demo影片
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/3WUXcYA3hXg/0.jpg)](https://www.youtube.com/watch?v=3WUXcYA3hXg)  
 點擊圖片播放
