@@ -1,7 +1,7 @@
 ---
 layout: post # 指定文章佈局，通常是 post
 title: EdgeAI 專題實作導覽
-date: 2025-06-01 00:00:00 +0800 # 發表日期和時間 (請根據您當前的時區調整 +0800 代表 UTC+8)
+date: 2025-06-01 08:00:00 +0800 # 發表日期和時間 (請根據您當前的時區調整 +0800 代表 UTC+8)
 categories: [邊緣運算] # 文章分類，您可以自訂
 tags: [EdgeAI-MCU,AI-coding] # 文章標籤，您可以自訂
 description: AMB82-mini 邊緣運算專題實作計畫
