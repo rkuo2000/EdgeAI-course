@@ -343,8 +343,8 @@ void loop()
 
 **示範照** 
 
-![img](/assets/image/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178626_0.jpg)
-![img](/assets/image/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178625_0.jpg)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178626_0.jpg)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178625_0.jpg)
 
 ### 影片
 
