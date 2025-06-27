@@ -7,7 +7,7 @@ tags: [入門,學習,blog] # 文章標籤，您可以自訂
 description: 這篇文章會講解我邊緣運算的第四個專案 AI 輔助英語教學
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
-permalink: /AI-Class/project4/
+permalink: /EdgeAI-MCU/project4/
 ---
 
 
