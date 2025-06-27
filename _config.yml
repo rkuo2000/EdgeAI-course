@@ -8,11 +8,11 @@ remote_theme: zivong/jekyll-theme-hydure # <-- 關鍵！從 GitHub 遠端載入�
 #theme: jekyll-theme-hydure # <-- 刪除這行，與 remote_theme 衝突
 
 lang: zh-TW # 網站語言，例如 zh-TW, zh-CN, en
-title: GenAI course # 您的網站標題
+title: EdgeAI course # 您的網站標題
 tagline: 生成式AI教材 # 網站的簡短標語
 description: >- # 網站的完整描述，會用於 SEO 和 Feed
   這是一個使用 Jekyll 和 Hydure 主題建立的教材網頁 。
-baseurl: "/GenAI-course" # 如果您的網站是 yourusername.github.io/my-blog/，請設定為 "/my-blog"
+baseurl: "/EdgeAI-course" # 如果您的網站是 yourusername.github.io/my-blog/，請設定為 "/my-blog"
             # 如果是 yourusername.github.io/，則留空 ""
 url: "" # 您的網站基礎網址，例如 http://example.com (通常留空，GitHub Pages 會自動處理)
 
