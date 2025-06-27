@@ -237,7 +237,7 @@ void sdPlayMP3(String filename)
 ### 照片
 
 ***AI產出的故事***
-![img](/assets/image/Edge-Ai-Class-Project/AI說故事/178620.jpg)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI說故事/178620.jpg)
 
 
 ### 影片
