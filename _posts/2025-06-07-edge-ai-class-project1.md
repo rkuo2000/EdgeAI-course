@@ -213,9 +213,9 @@ void sdPlayMP3(String filename)
 ### 照片
 
 1. 設備照
-![img](/assets/image/Edge-Ai-Class-Project/AI%E5%9B%9E%E6%94%B6/178615_0.jpg)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI%E5%9B%9E%E6%94%B6/178615_0.jpg)
 
-![img](/assets/image/Edge-Ai-Class-Project/AI%E5%9B%9E%E6%94%B6/178615_0.jpg)
+![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI%E5%9B%9E%E6%94%B6/178615_0.jpg)
 
 ### 影片
 
