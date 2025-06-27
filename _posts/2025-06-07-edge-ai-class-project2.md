@@ -284,17 +284,17 @@ void loop() {
 
 ### Demo 數據
 
-![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI監視器/image.png)
+![img](/assets/image/Edge-Ai-Class-Project/AI監視器/image.png)
 
 以下是檔案的詳細資料
 
-![img](/EdgeAI-course/assets/image/Edge-Ai-Class-Project/AI監視器/20250522_210653.jpg)
+![img](/assets/image/Edge-Ai-Class-Project/AI監視器/20250522_210653.jpg)
 
     20250522_210653.txt
 
     The image shows a computer screen displaying a webpage for Anaconda, a Python distribution. The webpage is primarily in Chinese, with some English words such as "Anaconda" and "Install Anaconda on Ubuntu".  The page seems to be showing instructions or information regarding installation and other details related to Anaconda. The computer is in a computer lab setting, with other computers visible in the background.  Several people are partially visible in the background, seemingly working on other computers.
 
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI監視器/20250522_210755.jpg)
+![img](/assets/image/Edge-Ai-Class-Project/AI監視器/20250522_210755.jpg)
 
     20250522_210755.txt
 
@@ -304,6 +304,8 @@ void loop() {
 
 ![img](https://github.com/rkuo2000/EdgeAI-course/blob/main/assets/image/Edge-Ai-Class-Project/AI%E7%9B%A3%E8%A6%96%E5%99%A8/20250522_210851.jpg?raw=true)
 
+    20250522_210851.txt
+    
     The image shows a section of a white ceiling.  There is a long fluorescent light fixture mounted on the ceiling, as well as what appears to be a portion of an air conditioning vent or exhaust fan in the upper right corner. There is no text visible in the image.
 
 
