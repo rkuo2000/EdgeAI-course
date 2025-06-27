@@ -2,18 +2,15 @@
 layout: post # 指定文章佈局，通常是 post
 title: AI 情緒感知音樂播放器
 date: 2025-06-07 15:40:00 +0800 # 發表日期和時間 (請根據您當前的時區調整 +0800 代表 UTC+8)
-categories: [1131邊緣運算課] # 文章分類，您可以自訂
-tags: [入門,學習,blog] # 文章標籤，您可以自訂
+categories: [專題實作] # 文章分類，您可以自訂
+tags: [程式範例, AMB82-mini, AI-coding] # 文章標籤，您可以自訂
 description: 這篇文章會講解我邊緣運算的第五個專案 AI 情緒感知音樂播放器
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
 permalink: /EdgeAI-MCU/project5/
 ---
 
-
-
 本報告旨在介紹一款創新的AI 情緒感知音樂播放器。該系統旨在透過人工智慧分析用戶當前的情緒狀態，並據此智能推薦並播放儲存在本地 SD 卡中的相應音樂，為使用者提供個性化的音樂聆聽體驗。其核心機制是捕捉用戶影像並傳送至 Google Gemini 進行情緒偵測，隨後 AI 會根據偵測到的情緒，從預設的歌曲清單中推薦最符合當前情感的歌曲名稱。
-
 
 - [功能](#功能)
 - [GenAI程式碼設計流程](#genai程式碼設計流程)
@@ -346,17 +343,15 @@ void loop()
 
 **示範照** 
 
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178626_0.jpg)
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178625_0.jpg)
-
-
+![img](/assets/image/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178626_0.jpg)
+![img](/assets/image/Edge-Ai-Class-Project/AI情緒感知音樂播放器/178625_0.jpg)
 
 ### 影片
 
-2. Damo影片
-Damo1  
+2. Demo影片
+Demo1  
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nc7NwauzBc0/0.jpg)](https://www.youtube.com/watch?v=nc7NwauzBc0)  
 點擊圖片播放
-Damo2  
+Demo2  
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/JS7wE3yyeiU/0.jpg)](https://www.youtube.com/watch?v=JS7wE3yyeiU)  
 點擊圖片播放
