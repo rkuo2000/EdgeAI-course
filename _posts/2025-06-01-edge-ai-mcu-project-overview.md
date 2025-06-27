@@ -24,6 +24,7 @@ permalink: /EdgeAI-MCU-project-overview/
 
 ## EdgeAI MCU System Diagram 
 
+![](https://github.com/rkuo2000/GenAI-course/blob/main/assets/image/EdgeAI-MCU-projects/AMB82-mini_ILI9341_PAM8403.jpg?raw=true)
 
 ## 專題介紹
 
