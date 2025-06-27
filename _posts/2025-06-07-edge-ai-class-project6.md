@@ -2,18 +2,15 @@
 layout: post # 指定文章佈局，通常是 post
 title: AI 盲人導航系統
 date: 2025-06-07 15:40:00 +0800 # 發表日期和時間 (請根據您當前的時區調整 +0800 代表 UTC+8)
-categories: [1131邊緣運算課] # 文章分類，您可以自訂
-tags: [入門,學習,blog] # 文章標籤，您可以自訂
+categories: [專題實作] # 文章分類，您可以自訂
+tags: [程式範例, AMB82-mini, AI-coding] # 文章標籤，您可以自訂
 description: 這篇文章會講解我邊緣運算的第六個專案 AI 盲人導航系統
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
 permalink: /EdgeAI-MCU/project6/
 ---
 
-
 本報告旨在介紹一款專為視障人士設計的AI 盲人導航系統。該系統旨在提供即時的語音定位輔助，幫助視障者更獨立、安全地探索周遭環境。其核心功能是透過掃描特定地點的二維碼 (QR Code)，迅速獲取二維碼內嵌的文字資訊（即地點名稱）。隨後，系統會利用文字轉語音 (Text-to-Speech, TTS) 技術將這個地點名稱轉換為清晰的語音指令，並立即透過音訊輸出裝置播放出來。
-
-
 
 - [功能](#功能)
 - [GenAI程式碼設計流程](#genai程式碼設計流程)
@@ -80,7 +77,7 @@ graph TD
 
 ## 程式碼產生提示
 
-![img](image/AI盲人導航系統/螢幕擷取畫面%202025-06-14%20014155.png)  
+![img](/assets/image/AI盲人導航系統/螢幕擷取畫面%202025-06-14%20014155.png)  
 ```我想請你幫我做一個滿足以下條件的程式
 功能： 掃描二維碼說出位置
 步驟1. 掃描二維碼取得文字（地點名稱）
@@ -265,15 +262,14 @@ void sdPlayMP3(String filename) {
 
 ### 照片
 
-1. qrcode偵測 Damo  
+1. QRcode偵測 Demo    
   
-  
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20122548.png)
+![img](/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20122548.png)
 
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20142153.png)
+![img](/assets/image/Edge-Ai-Class-Project/AI盲人導航系統/螢幕擷取畫面%202025-06-12%20142153.png)
 
 ### 影片
 
-Damo影片  
+Demo影片  
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/muGBQxwAWqU/0.jpg)](https://www.youtube.com/watch?v=muGBQxwAWqU)  
 點擊圖片播放  
