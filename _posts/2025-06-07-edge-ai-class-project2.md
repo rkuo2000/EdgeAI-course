@@ -302,9 +302,7 @@ void loop() {
     The image shows a computer lab or internet cafe setting. The focus is on a  large computer monitor in the foreground, displaying a webpage that is   partially visible and blurry.  The webpage seems to contain text and possibly     an image or advertisement.  Surrounding this main monitor are several other     computer monitors, arranged in rows. The monitors are relatively small compared     to the one in the foreground, and their screens are partially obscured. The     room itself appears to be a typical office or classroom setting, with a white   ceiling, fluorescent lighting, and what look like cubicle partitions partially    visible behind the computers.  A keyboard is visible in the bottom-left corner,    partially obscuring the edge of a laptop.  The overall lighting is bright but  somewhat washed out, likely due to the fluorescent lights.
     The text on the main monitor is unclear and unreadable due to blurriness and    distance.  Therefore, no summary of the webpage's content can be provided.
 
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI監視器/20250522_210851.jpg)
-
-    20250522_210851.jpg
+![img](https://github.com/rkuo2000/EdgeAI-course/blob/main/assets/image/Edge-Ai-Class-Project/AI%E7%9B%A3%E8%A6%96%E5%99%A8/20250522_210851.jpg?raw=true)
 
     The image shows a section of a white ceiling.  There is a long fluorescent light fixture mounted on the ceiling, as well as what appears to be a portion of an air conditioning vent or exhaust fan in the upper right corner. There is no text visible in the image.
 
