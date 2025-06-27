@@ -2,17 +2,15 @@
 layout: post # 指定文章佈局，通常是 post
 title: AI 看圖說故事
 date: 2025-06-07 15:40:00 +0800 # 發表日期和時間 (請根據您當前的時區調整 +0800 代表 UTC+8)
-categories: [1131邊緣運算課] # 文章分類，您可以自訂
-tags: [入門,學習,blog] # 文章標籤，您可以自訂
+categories: [專題實作] # 文章分類，您可以自訂
+tags: [程式範例, AMB82-mini, AI-coding] # 文章標籤，您可以自訂
 description: 這篇文章會講解我邊緣運算的第三個專案 AI 看圖說故事
 mathjax: false # 如果這篇文章不需要顯示數學公式，請設false
 comments: false # 如果這篇文章需要啟用評論，請設為 true
 permalink: /EdgeAI-MCU/project3/
 ---
 
-
 本報告旨在介紹一個創新的AI 看圖說故事系統。該系統旨在將視覺內容轉化為富有想像力的故事情節，為使用者提供獨特的互動體驗。透過按下按鈕捕捉影像，系統會將圖像傳送至強大的 Google Gemini Vision AI 進行分析，並由 AI 根據圖像內容即時編寫一個童話故事
-
 
 - [功能](#功能)
 - [GenAI程式碼設計流程](#genai程式碼設計流程)
@@ -239,12 +237,12 @@ void sdPlayMP3(String filename)
 ### 照片
 
 ***AI產出的故事***
-![imag](/blog/assets/image/Edge-Ai-Class-Project/AI說故事/178620.jpg)
+![img](/assets/image/Edge-Ai-Class-Project/AI說故事/178620.jpg)
 
 
 ### 影片
 
-2. Damo影片
+2. Demo影片
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HFSRFjz1Yuc/0.jpg)](https://www.youtube.com/watch?v=HFSRFjz1Yuc)  
 點擊圖片播放
