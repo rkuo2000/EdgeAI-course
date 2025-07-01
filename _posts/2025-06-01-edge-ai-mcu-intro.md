@@ -59,7 +59,7 @@ Pass: 035623116
 ---
 ## Arduino IDE使用介紹
 
-### [Arduino IDE 2.3.4](https://www.arduino.cc/en/software) 下載 & 安裝
+### [Arduino IDE 2.3.6](https://www.arduino.cc/en/software) 下載 & 安裝
 <p><img width="50%" height="50%" src="https://github.com/rkuo2000/EdgeAI-AMB82mini/blob/main/assets/Arduino_IDE.png?raw=true"></p>
 
 ---
