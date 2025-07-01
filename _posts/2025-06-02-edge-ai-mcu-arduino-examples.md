@@ -204,10 +204,10 @@ compilation error: need to modify `Libraries/TJpg_Decoder/src/User_Config.h`<br>
 AMB82-mini + PAM8403 + 4ohm 3W speaker<br>
 ![](https://github.com/rkuo2000/EdgeAI-AMB82mini/blob/main/assets/AMB82-mini_PAM8403.jpg?raw=true)
 
-**Sketchbook> AMB82-mini > [SDcardMP3](https://github.com/rkuo2000/EdgeAI-AMB82mini/blob/main/Arduino/AMB82-mini/SDcardMP3/SDcardMP3.ino)** <br>
+**Sketchbook> AMB82-mini > [SDcardPlayMP3](https://github.com/rkuo2000/EdgeAI-AMB82mini/blob/main/Arduino/AMB82-mini/SDcardPlayMP3/SDcardPlayMP3.ino)** <br>
 * .mp3 files stored under mp3 directory
 
-**Sketchbook> AMB82-mini > [SDcardMP3_PlayAll](https://github.com/rkuo2000/EdgeAI-AMB82mini/blob/main/Arduino/AMB82-mini/SDcardMP3_PlayAll/SDcardMP3_PlayAll.ino)** <br>
+**Sketchbook> AMB82-mini > [SDcardPlayMP3_All](https://github.com/rkuo2000/EdgeAI-AMB82mini/blob/main/Arduino/AMB82-mini/SDcardPlayMP3_All/SDcardPlayMP3_All.ino)** <br>
      
 ---
 ### 音頻串流範例
